@@ -9,3 +9,8 @@ group :development do
   gem 'rb-readline'
   gem 'test-kitchen'
 end
+
+group :test do
+  gem 'rspec'
+  gem 'rubocop'
+end
