@@ -6,10 +6,14 @@ describe 'client' do
   end
 
   it 'should have username' do
-    expect(client.class.default_options[:basic_auth][:username]).to eq 'admin'
+    expect(client_defaults[:basic_auth][:username]).to eq 'admin'
   end
 
   it 'should have password' do
-    expect(client.class.default_options[:basic_auth][:password]).to eq 'admin'
+    expect(client_defaults[:basic_auth][:password]).to eq 'admin'
+  end
+
+  it 'use application/json type' do
+    expect(client_defaults[:headers]['Content-Type']).to eq 'application/json'
   end
 end

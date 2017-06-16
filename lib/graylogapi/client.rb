@@ -5,10 +5,14 @@ module Graylogapi
   class Client
     include HTTParty
 
+    format :json
+
     def initialize(api_url, user, pass)
       self.class.base_uri api_url
-      self.class.default_options.merge!(basic_auth: { username: user,
-                                                      password: pass })
+
+      default_options = { basic_auth: { username: user, password: pass },
+                          headers: { 'Content-Type' => 'application/json' } }
+      self.class.default_options.merge!(default_options)
     end
 
     def alerts
