@@ -6,4 +6,6 @@ gemspec
 group :development do
   gem 'kitchen-vagrant'
   gem 'test-kitchen'
+  gem 'pry'
+  gem 'rb-readline'
 end
