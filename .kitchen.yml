@@ -1,0 +1,26 @@
+---
+driver:
+  name: vagrant
+
+driver_config:
+  customize:
+    memory: 4096
+  network:
+    - - forwarded_port
+      - guest: 9000
+        host: 9000
+        auto_correct: true
+
+provisioner:
+  name: chef_zero
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: centos-7.2
+
+suites:
+  - name: graylog2
+    run_list:
+      - recipe[graylog_test]

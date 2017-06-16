@@ -14,10 +14,10 @@ Gem::Specification.new do |spec|
   spec.description   = 'Allows you to work with graylog api from ruby'
   spec.homepage      = 'https://github.com/postgred/graylogapi'
 
-  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.files         = ['README.md', 'graylogapi.gemspec', 'LICENSE'] +
+                       Dir['lib/**/*.rb']
   spec.require_paths = ['lib']
 
-  spec.add_development_dependency 'bundler', '~> 1.12'
-  spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rubocop'
 end
