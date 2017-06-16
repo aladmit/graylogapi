@@ -11,3 +11,9 @@ RSpec.configure do |config|
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
 end
+
+RSpec.shared_context 'client' do
+  let(:client) do
+    Graylogapi::Client.new('http://localhost:9000/api', 'admin', 'admin')
+  end
+end

@@ -10,5 +10,9 @@ module Graylogapi
       self.class.default_options.merge!(basic_auth: { username: user,
                                                       password: pass })
     end
+
+    def alerts
+      @alerts ||= Alerts.new
+    end
   end
 end
