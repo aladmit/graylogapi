@@ -7,7 +7,8 @@ module Graylogapi
 
     def initialize(api_url, user, pass)
       self.class.base_uri api_url
-      self.class.default_options.merge!(basic_auth: { username: user, password: pass })
+      self.class.default_options.merge!(basic_auth: { username: user,
+                                                      password: pass })
     end
   end
 end
