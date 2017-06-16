@@ -5,5 +5,12 @@ gemspec
 
 group :development do
   gem 'kitchen-vagrant'
+  gem 'pry'
+  gem 'rb-readline'
   gem 'test-kitchen'
+end
+
+group :test do
+  gem 'rspec'
+  gem 'rubocop'
 end
