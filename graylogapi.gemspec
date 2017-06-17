@@ -18,6 +18,5 @@ Gem::Specification.new do |spec|
                        Dir['lib/**/*.rb']
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'httparty'
   spec.add_development_dependency 'bundler'
 end
