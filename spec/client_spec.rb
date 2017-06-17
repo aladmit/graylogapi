@@ -17,7 +17,10 @@ describe 'client', vcr: true do
 
   context 'post request' do
     context 'success' do
-      subject { client.post('/dashboards', { title: 'Test Dashboard', description: 'test description' }) }
+      subject do
+        client.post('/dashboards', title: 'Test Dashboard',
+                                   description: 'test description')
+      end
 
       it 'return hash from body' do
         expect(subject.class).to eq Hash
