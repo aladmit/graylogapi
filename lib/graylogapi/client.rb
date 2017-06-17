@@ -34,7 +34,7 @@ module Graylogapi
       response = @http.request(request)
 
       JSON.parse(response.body)
-    rescue JSON::ParserError
+    rescue JSON::ParserError, TypeError
       response
     end
 

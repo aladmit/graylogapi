@@ -1,4 +1,5 @@
 require 'graylogapi'
+require_relative './support/webmock'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

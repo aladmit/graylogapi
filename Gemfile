@@ -13,4 +13,6 @@ end
 group :test do
   gem 'rspec'
   gem 'rubocop'
+  gem 'vcr'
+  gem 'webmock'
 end

@@ -1,4 +1,4 @@
-describe 'client' do
+describe 'client', vcr: true do
   include_context 'client'
 
   context 'get request' do
