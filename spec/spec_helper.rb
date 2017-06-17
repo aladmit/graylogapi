@@ -14,6 +14,8 @@ end
 
 RSpec.shared_context 'client' do
   let(:client) do
-    Graylogapi::Client.new('http://localhost:9000/api', 'admin', 'admin')
+    Graylogapi::Client.new(base_url: 'http://localhost:9000/api',
+                           user: 'admin',
+                           pass: 'admin')
   end
 end

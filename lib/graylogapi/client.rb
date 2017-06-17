@@ -13,11 +13,11 @@ module Graylogapi
       @http = Net::HTTP.new(uri.host, uri.port)
     end
 
-    def get(url, params)
+    def get(url, params = {})
       json_request(:get, url, params)
     end
 
-    def post(url, body)
+    def post(url, body = {})
       json_request(:post, url, body)
     end
 
@@ -31,13 +31,17 @@ module Graylogapi
       request = request(method, path, params)
       request.basic_auth(options[:user], options[:pass])
       request.add_field('Content-Type', 'application/json')
-      JSON.parse(@http.request(request).body)
+      response = @http.request(request)
+
+      JSON.parse(response.body)
+    rescue JSON::ParserError
+      response
     end
 
     def request(method, path, params = {})
       case method
       when :get
-        full_path = encode_path_params(path, params)
+        full_path = encode_path_params(options[:base_url] + path, params)
         request = Net::HTTP::Get.new(full_path)
       else
         request = Net::HTTP::Post.new(options[:base_url] + path)
