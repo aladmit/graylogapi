@@ -6,7 +6,7 @@ require 'graylogapi/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'graylogapi'
-  spec.version       = Graylogapi::VERSION
+  spec.version       = GraylogAPI::VERSION
   spec.authors       = ['Andrey Aleksandrov']
   spec.email         = ['postgred@gmail.com']
 

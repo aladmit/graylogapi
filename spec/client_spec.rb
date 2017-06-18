@@ -1,50 +1,54 @@
 describe 'client', vcr: true do
-  include_context 'client'
+  include_context 'graylogapi'
+  let(:client) { graylogapi.client }
 
-  context 'get request' do
-    context 'success' do
-      it 'return hash from body' do
-        expect(client.get('/count/total').class).to eq Hash
-      end
+  context 'success requests' do
+    it 'get' do
+      expect(client.get('/count/total').class).to eq Hash
     end
 
-    context 'fail' do
-      it 'if body is empty return Net' do
-        expect(client.get('/').class).to eq Net::HTTPTemporaryRedirect
-      end
+    it 'post' do
+      dashboard = client.post('/dashboards', title: 'Post Dashboard',
+                                             description: 'post dashboard')
+      expect(dashboard.keys).to include 'dashboard_id'
+    end
+
+    it 'put' do
+      client.post('/dashboards', title: 'Put Dashboard',
+                                 description: 'Put Dashboard')
+      id = client.get('/dashboards')['dashboards']
+                 .select { |e| e['title'] == 'Put Dashboard' }
+                 .first['id']
+      request = client.put("/dashboards/#{id}", title: 'Put_Dashboard')
+      expect(request.code).to eq '204'
+    end
+
+    it 'delete' do
+      client.post('/dashboards', title: 'Delete Dashboard',
+                                 description: 'Delete Dashboard')
+      id = client.get('/dashboards')['dashboards']
+                 .select { |e| e['title'] == 'Delete Dashboard' }
+                 .first['id']
+      expect(client.delete("/dashboards/#{id}").code).to eq '204'
     end
   end
 
-  context 'post request' do
-    context 'success' do
-      subject do
-        client.post('/dashboards', title: 'Test Dashboard',
-                                   description: 'test description')
-      end
-
-      it 'return hash from body' do
-        expect(subject.class).to eq Hash
-        expect(subject.keys).to include 'dashboard_id'
-      end
+  context 'fail requests' do
+    it 'return Net object' do
+      expect(client.get('/incorrect_page').class).to eq Net::HTTPOK
     end
   end
 
-  it 'delete request' do
-    client.post('/dashboards', title: 'Test delete',
-                               description: 'test delete')
-    dashboard_id = client.get('/dashboards')['dashboards']
-                         .select { |e| e['title'] == 'Test delete' }
-                         .first['id']
-    expect(client.delete("/dashboards/#{dashboard_id}").code).to eq '204'
-  end
+  context 'json_request' do
+    %w[get post put delete].each do |method|
+      it "#{method} use json_request method" do
+        expect(client).to receive(:json_request)
+        client.send(method, '/incorrect_page')
+      end
+    end
 
-  it 'put request' do
-    client.post('/dashboards', title: 'Test put',
-                               description: 'test put')
-    dashboard_id = client.get('/dashboards')['dashboards']
-                         .select { |e| e['title'] == 'Test put' }
-                         .first['id']
-    request = client.put("/dashboards/#{dashboard_id}", title: 'success')
-    expect(request.code).to eq '204'
+    it 'return Net object if can`t parse response body' do
+      expect(client.get('/incorrect_page').class).to eq Net::HTTPOK
+    end
   end
 end
