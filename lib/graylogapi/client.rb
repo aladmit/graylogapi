@@ -2,7 +2,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-module Graylogapi
+class GraylogAPI
   # The client is the entry point to the api
   class Client
     attr_reader :options
@@ -27,14 +27,6 @@ module Graylogapi
 
     def delete(url, params = {})
       json_request(:delete, url, params)
-    end
-
-    def alerts
-      @alerts ||= Alerts.new(self)
-    end
-
-    def system
-      @system ||= System.new(self)
     end
 
     private
