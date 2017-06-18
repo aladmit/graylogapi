@@ -5,7 +5,7 @@ http_interactions:
     uri: http://localhost:9000/api/dashboards
     body:
       encoding: UTF-8
-      string: '{"title":"Test Dashboard","description":"test description"}'
+      string: '{"title":"Post Dashboard","description":"post dashboard"}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -23,20 +23,20 @@ http_interactions:
       message: Created
     headers:
       Location:
-      - http://10.211.55.25:9000/api/594539080b5712166af1da3c
+      - http://10.211.55.25:9000/api/5946ada60b5712166af21200
       X-Graylog-Node-Id:
       - edfa28fa-d2f7-4700-b564-118ea7605850
       X-Runtime-Microseconds:
-      - '1209'
+      - '1143'
       Content-Type:
       - application/json
       Date:
-      - Sat, 17 Jun 2017 14:13:28 GMT
+      - Sun, 18 Jun 2017 16:43:18 GMT
       Content-Length:
       - '43'
     body:
       encoding: UTF-8
-      string: '{"dashboard_id":"594539080b5712166af1da3c"}'
+      string: '{"dashboard_id":"5946ada60b5712166af21200"}'
     http_version: 
-  recorded_at: Sat, 17 Jun 2017 14:13:28 GMT
+  recorded_at: Sun, 18 Jun 2017 16:43:18 GMT
 recorded_with: VCR 3.0.3
