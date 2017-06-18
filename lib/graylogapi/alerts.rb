@@ -1,4 +1,4 @@
-module Graylogapi
+class GraylogAPI
   # class for manage stream alerts for all streams
   class Alerts
     def initialize(client)

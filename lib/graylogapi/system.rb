@@ -1,6 +1,6 @@
 require 'graylogapi/system/inputs'
 
-module Graylogapi
+class GraylogAPI
   # class for manage system
   class System
     def initialize(client)

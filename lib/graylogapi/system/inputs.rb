@@ -1,4 +1,4 @@
-module Graylogapi
+class GraylogAPI
   class System
     # class for manage inputs
     class Inputs
