@@ -19,4 +19,8 @@ RSpec.shared_context 'client' do
                            user: 'admin',
                            pass: 'admin')
   end
+
+  let(:client_defaults) do
+    client.class.default_options
+  end
 end

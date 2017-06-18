@@ -2,3 +2,5 @@ AllCops:
   Exclude:
     - 'test/fixtures/cookbooks/**/*'
     - 'vendor/**/*'
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context']

@@ -4,3 +4,4 @@ $LOAD_PATH.unshift(libdir) unless $LOAD_PATH.include?(libdir)
 require 'graylogapi/version'
 require 'graylogapi/client'
 require 'graylogapi/alerts'
+require 'graylogapi/system'
