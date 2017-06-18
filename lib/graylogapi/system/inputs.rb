@@ -1,7 +1,7 @@
 module Graylogapi
   class System
     # class for manage inputs
-    class Inputs < Client
+    class Inputs
       def initialize(client)
         @client = client
       end
@@ -14,8 +14,16 @@ module Graylogapi
         @client.get("/system/inputs/#{id}")
       end
 
-      def create(body = {})
-        @client.post('/system/inputs', body)
+      def create(params = {})
+        @client.post('/system/inputs', params)
+      end
+
+      def update(id, params = {})
+        @client.put("/system/inputs/#{id}", params)
+      end
+
+      def delete(id, params = {})
+        @client.delete("/system/inputs/#{id}", params)
       end
     end
   end
