@@ -6,6 +6,7 @@ require 'graylogapi/client'
 require 'graylogapi/alerts'
 require 'graylogapi/system'
 
+# class for work with graylog api
 class GraylogAPI
   attr_reader :client
 
