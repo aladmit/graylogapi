@@ -1,11 +1,11 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: http://localhost:9000/api/count/total
+    method: post
+    uri: http://localhost:9000/api/dashboards
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: '{"title":"Post Dashboard","description":"post dashboard"}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -19,22 +19,24 @@ http_interactions:
       - application/json
   response:
     status:
-      code: 200
-      message: OK
+      code: 201
+      message: Created
     headers:
+      Location:
+      - http://10.211.55.25:9000/api/5947a86e0b5712166af245b2
       X-Graylog-Node-Id:
       - edfa28fa-d2f7-4700-b564-118ea7605850
       X-Runtime-Microseconds:
-      - '3696'
+      - '1648'
       Content-Type:
       - application/json
       Date:
-      - Sun, 18 Jun 2017 16:43:18 GMT
+      - Mon, 19 Jun 2017 10:33:18 GMT
       Content-Length:
-      - '12'
+      - '43'
     body:
       encoding: UTF-8
-      string: '{"events":0}'
+      string: '{"dashboard_id":"5947a86e0b5712166af245b2"}'
     http_version: 
-  recorded_at: Sun, 18 Jun 2017 16:43:17 GMT
+  recorded_at: Mon, 19 Jun 2017 10:33:18 GMT
 recorded_with: VCR 3.0.3

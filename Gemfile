@@ -4,6 +4,9 @@ source 'https://rubygems.org'
 gemspec
 
 group :development do
+  gem 'berkshelf'
+  gem 'inspec'
+  gem 'kitchen-inspec'
   gem 'kitchen-vagrant'
   gem 'pry'
   gem 'rb-readline'
@@ -13,6 +16,7 @@ end
 group :test do
   gem 'rspec'
   gem 'rubocop'
+  gem 'rubocop-rspec'
   gem 'vcr'
   gem 'webmock'
 end
