@@ -37,9 +37,29 @@ class GraylogAPI
       request.add_field('Content-Type', 'application/json')
       response = @http.request(request)
 
-      JSON.parse(response.body)
-    rescue JSON::ParserError, TypeError
+      response_struct(response)
+    rescue
       response
+    end
+
+    def response_struct(response)
+      struct = Struct.new(:code, :body)
+
+      code = response.code.to_i
+      body = parse_body(response.body)
+      struct.new(code, body)
+    end
+
+    def parse_body(body)
+      if body.nil? || body.empty?
+        {}
+      else
+        begin
+          JSON.parse(body)
+        rescue
+          body
+        end
+      end
     end
 
     def get_request(path, params = {})
