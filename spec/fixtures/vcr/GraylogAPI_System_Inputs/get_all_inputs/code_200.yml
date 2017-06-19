@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:9000/api/system/inputs
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW46YWRtaW4=
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Graylog-Node-Id:
+      - edfa28fa-d2f7-4700-b564-118ea7605850
+      X-Runtime-Microseconds:
+      - '994'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 19 Jun 2017 14:03:07 GMT
+      Content-Length:
+      - '4185'
+    body:
+      encoding: UTF-8
+      string: '{"inputs":[{"title":"Input by gem123","global":true,"name":"Beats","content_pack":null,"created_at":"2017-06-19T13:45:05.253Z","type":"org.graylog.plugins.beats.BeatsInput","creator_user_id":"admin","attributes":{"bind_address":"0.0.0.0","port":5044},"static_fields":{},"node":null,"id":"5947d5610b5712166af2521d"},{"title":"Input
+        by gem123","global":true,"name":"Beats","content_pack":null,"created_at":"2017-06-19T13:44:08.220Z","type":"org.graylog.plugins.beats.BeatsInput","creator_user_id":"admin","attributes":{"bind_address":"0.0.0.0","port":5044},"static_fields":{},"node":null,"id":"5947d5280b5712166af251d3"},{"title":"Input
+        by gem123","global":true,"name":"Beats","content_pack":null,"created_at":"2017-06-19T13:37:08.730Z","type":"org.graylog.plugins.beats.BeatsInput","creator_user_id":"admin","attributes":{"recv_buffer_size":1048576,"bind_address":"0.0.0.0","port":5044},"static_fields":{},"node":null,"id":"5947d3840b5712166af25009"},{"title":"asg","global":true,"name":"Beats","content_pack":null,"created_at":"2017-06-18T14:45:48.168Z","type":"org.graylog.plugins.beats.BeatsInput","creator_user_id":"admin","attributes":{"recv_buffer_size":1048576,"port":5044,"tls_key_file":"","tls_enable":false,"tls_key_password":"","tcp_keepalive":false,"tls_client_auth_cert_file":"","tls_client_auth":"disabled","override_source":null,"bind_address":"0.0.0.0","tls_cert_file":""},"static_fields":{},"node":null,"id":"5946921c0b5712166af1f71d"},{"title":"Input
+        by gem1234","global":true,"name":"Beats","content_pack":null,"created_at":"2017-06-19T13:40:54.249Z","type":"org.graylog.plugins.beats.BeatsInput","creator_user_id":"admin","attributes":{"bind_address":"0.0.0.0","port":5555},"static_fields":{},"node":null,"id":"5947d38b0b5712166af25015"},{"title":"Input
+        by gem123","global":true,"name":"Beats","content_pack":null,"created_at":"2017-06-19T13:17:10.499Z","type":"org.graylog.plugins.beats.BeatsInput","creator_user_id":"admin","attributes":{"tls_client_auth":"disabled","recv_buffer_size":1048576,"bind_address":"0.0.0.0","port":5044},"static_fields":{},"node":null,"id":"5947ced60b5712166af24b10"},{"title":"Test_create_input","global":true,"name":"Beats","content_pack":null,"created_at":"2017-06-19T13:26:57.798Z","type":"org.graylog.plugins.beats.BeatsInput","creator_user_id":"admin","attributes":{"tls_client_auth":"disabled","recv_buffer_size":1048576,"bind_address":"0.0.0.0","port":5044},"static_fields":{},"node":null,"id":"5947d1210b5712166af24d7f"},{"title":"Input
+        by gem123","global":true,"name":"Beats","content_pack":null,"created_at":"2017-06-19T13:44:08.207Z","type":"org.graylog.plugins.beats.BeatsInput","creator_user_id":"admin","attributes":{"bind_address":"0.0.0.0","port":5044},"static_fields":{},"node":null,"id":"5947d5280b5712166af251d1"},{"title":"Test_create_input","global":true,"name":"Beats","content_pack":null,"created_at":"2017-06-19T13:45:05.200Z","type":"org.graylog.plugins.beats.BeatsInput","creator_user_id":"admin","attributes":{"tls_client_auth":"disabled","recv_buffer_size":1048576,"bind_address":"0.0.0.0","port":5044},"static_fields":{},"node":null,"id":"5947d5610b5712166af25217"},{"title":"Input
+        by gem123","global":true,"name":"Beats","content_pack":null,"created_at":"2017-06-19T13:45:05.278Z","type":"org.graylog.plugins.beats.BeatsInput","creator_user_id":"admin","attributes":{"bind_address":"0.0.0.0","port":5044},"static_fields":{},"node":null,"id":"5947d5610b5712166af2521f"},{"title":"Test_create_input","global":true,"name":"Beats","content_pack":null,"created_at":"2017-06-19T13:45:05.213Z","type":"org.graylog.plugins.beats.BeatsInput","creator_user_id":"admin","attributes":{"tls_client_auth":"disabled","recv_buffer_size":1048576,"bind_address":"0.0.0.0","port":5044},"static_fields":{},"node":null,"id":"5947d5610b5712166af25219"},{"title":"Test_create_input","global":true,"name":"Beats","content_pack":null,"created_at":"2017-06-19T13:26:57.777Z","type":"org.graylog.plugins.beats.BeatsInput","creator_user_id":"admin","attributes":{"tls_client_auth":"disabled","recv_buffer_size":1048576,"bind_address":"0.0.0.0","port":5044},"static_fields":{},"node":null,"id":"5947d1210b5712166af24d7d"}],"total":12}'
+    http_version: 
+  recorded_at: Mon, 19 Jun 2017 14:03:07 GMT
+recorded_with: VCR 3.0.3
