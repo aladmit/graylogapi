@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:9000/api/system/inputs
+    body:
+      encoding: UTF-8
+      string: '{"title":"Test_create_input","type":"org.graylog.plugins.beats.BeatsInput","global":true,"configuration":{"bind_address":"0.0.0.0","port":5044,"recv_buffer_size":1048576,"tls_client_auth":"disabled"}}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW46YWRtaW4=
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Location:
+      - http://10.211.55.25:9000/api/system/inputs/5947d5610b5712166af25217
+      X-Graylog-Node-Id:
+      - edfa28fa-d2f7-4700-b564-118ea7605850
+      X-Runtime-Microseconds:
+      - '1620'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 19 Jun 2017 13:45:05 GMT
+      Content-Length:
+      - '33'
+    body:
+      encoding: UTF-8
+      string: '{"id":"5947d5610b5712166af25217"}'
+    http_version: 
+  recorded_at: Mon, 19 Jun 2017 13:45:05 GMT
+recorded_with: VCR 3.0.3
