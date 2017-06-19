@@ -41,4 +41,20 @@ describe GraylogAPI::System::Inputs, vcr: true do
       expect(subject.body.keys).to contain_exactly 'id'
     end
   end
+
+  context 'get all inputs' do
+    subject { graylogapi.system.inputs.all }
+
+    it 'code 200' do
+      expect(subject.code).to eq 200
+    end
+
+    it 'contain count of inputs' do
+      expect(subject.body.keys).to include 'total'
+    end
+
+    it 'contain array of inputs' do
+      expect(subject.body.keys).to include 'inputs'
+    end
+  end
 end
