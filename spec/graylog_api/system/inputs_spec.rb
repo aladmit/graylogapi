@@ -60,7 +60,7 @@ describe GraylogAPI::System::Inputs, vcr: true do
   end
 
   context 'get by id' do
-    subject do
+    subject(:response) do
       options = { title: 'Input by gem123',
                   type: 'org.graylog.plugins.beats.BeatsInput',
                   global: true,
