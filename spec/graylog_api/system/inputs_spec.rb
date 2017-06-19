@@ -2,27 +2,28 @@ describe GraylogAPI::System::Inputs, vcr: true do
   include_context 'graylogapi'
 
   context 'create input' do
-    subject do
-      graylogapi.system.inputs.create(title: 'Test_create_input',
-                                      type: 'org.graylog.plugins.beats.BeatsInput',
-                                      global: true,
-                                      configuration: { bind_address: '0.0.0.0',
-                                                       port: 5044,
-                                                       recv_buffer_size: 1048576,
-                                                       tls_client_auth: 'disabled' })
+    subject(:response) do
+      options = { title: 'Test_create_input',
+                  type: 'org.graylog.plugins.beats.BeatsInput',
+                  global: true,
+                  configuration: { bind_address: '0.0.0.0',
+                                   port: 5044,
+                                   recv_buffer_size: 1_048_576,
+                                   tls_client_auth: 'disabled' } }
+      graylogapi.system.inputs.create(options)
     end
 
     it 'code 201' do
-      expect(subject.code).to eq 201
+      expect(response.code).to eq 201
     end
 
     it 'return id' do
-      expect(subject.body.keys).to contain_exactly 'id'
+      expect(response.body.keys).to contain_exactly 'id'
     end
   end
 
   context 'update input' do
-    subject do
+    subject(:response) do
       options = { title: 'Input by gem123',
                   type: 'org.graylog.plugins.beats.BeatsInput',
                   global: true,
@@ -34,27 +35,27 @@ describe GraylogAPI::System::Inputs, vcr: true do
     end
 
     it 'code 201' do
-      expect(subject.code).to eq 201
+      expect(response.code).to eq 201
     end
 
     it 'return id' do
-      expect(subject.body.keys).to contain_exactly 'id'
+      expect(response.body.keys).to contain_exactly 'id'
     end
   end
 
   context 'get all inputs' do
-    subject { graylogapi.system.inputs.all }
+    subject(:response) { graylogapi.system.inputs.all }
 
     it 'code 200' do
-      expect(subject.code).to eq 200
+      expect(response.code).to eq 200
     end
 
     it 'contain count of inputs' do
-      expect(subject.body.keys).to include 'total'
+      expect(response.body.keys).to include 'total'
     end
 
     it 'contain array of inputs' do
-      expect(subject.body.keys).to include 'inputs'
+      expect(response.body.keys).to include 'inputs'
     end
   end
 
@@ -71,15 +72,15 @@ describe GraylogAPI::System::Inputs, vcr: true do
     end
 
     it 'code 200' do
-      expect(subject.code).to eq 200
+      expect(response.code).to eq 200
     end
 
     it 'contain id' do
-      expect(subject.body.keys).to include 'id'
+      expect(response.body.keys).to include 'id'
     end
 
     it 'contain title' do
-      expect(subject.body.keys).to include 'title'
+      expect(response.body.keys).to include 'title'
     end
   end
 end
