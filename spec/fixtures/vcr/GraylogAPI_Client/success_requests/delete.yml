@@ -1,45 +1,6 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: http://localhost:9000/api/dashboards
-    body:
-      encoding: UTF-8
-      string: '{"title":"Put Dashboard","description":"Put Dashboard"}'
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-      Authorization:
-      - Basic YWRtaW46YWRtaW4=
-      Content-Type:
-      - application/json
-  response:
-    status:
-      code: 201
-      message: Created
-    headers:
-      Location:
-      - http://10.211.55.25:9000/api/59479e8c0b5712166af23b42
-      X-Graylog-Node-Id:
-      - edfa28fa-d2f7-4700-b564-118ea7605850
-      X-Runtime-Microseconds:
-      - '1293'
-      Content-Type:
-      - application/json
-      Date:
-      - Mon, 19 Jun 2017 09:51:08 GMT
-      Content-Length:
-      - '43'
-    body:
-      encoding: UTF-8
-      string: '{"dashboard_id":"59479e8c0b5712166af23b42"}'
-    http_version: 
-  recorded_at: Mon, 19 Jun 2017 09:51:08 GMT
-- request:
     method: get
     uri: http://localhost:9000/api/dashboards
     body:
@@ -64,19 +25,18 @@ http_interactions:
       X-Graylog-Node-Id:
       - edfa28fa-d2f7-4700-b564-118ea7605850
       X-Runtime-Microseconds:
-      - '1248'
+      - '1142'
       Content-Type:
       - application/json
       Date:
-      - Mon, 19 Jun 2017 09:51:08 GMT
+      - Mon, 19 Jun 2017 10:33:18 GMT
       Content-Length:
-      - '5721'
+      - '7008'
     body:
       encoding: UTF-8
-      string: '{"total":31,"dashboards":[{"creator_user_id":"admin","description":"test
-        description","created_at":"2017-06-17T13:52:58.996Z","positions":{},"id":"5945343a0b5712166af1d52a","title":"test
-        finished","widgets":[]},{"creator_user_id":"admin","description":"test description","created_at":"2017-06-17T13:56:03.883Z","positions":{},"id":"594534f30b5712166af1d5ed","title":"Test
-        Dashboard","widgets":[]},{"creator_user_id":"admin","description":"test description","created_at":"2017-06-17T13:56:19.255Z","positions":{},"id":"594535030b5712166af1d5fe","title":"Test
+      string: '{"total":38,"dashboards":[{"creator_user_id":"admin","description":"test
+        description","created_at":"2017-06-17T13:56:03.883Z","positions":{},"id":"594534f30b5712166af1d5ed","title":"Edited_Dashboard","widgets":[]},{"creator_user_id":"admin","description":"test
+        description","created_at":"2017-06-17T13:56:19.255Z","positions":{},"id":"594535030b5712166af1d5fe","title":"Test
         Dashboard","widgets":[]},{"creator_user_id":"admin","description":"test description","created_at":"2017-06-17T13:58:21.101Z","positions":{},"id":"5945357d0b5712166af1d67f","title":"Test
         Dashboard","widgets":[]},{"creator_user_id":"admin","description":"test description","created_at":"2017-06-17T14:11:24.852Z","positions":{},"id":"5945388c0b5712166af1d9b7","title":"Test
         Dashboard","widgets":[]},{"creator_user_id":"admin","description":"test description","created_at":"2017-06-17T14:11:46.138Z","positions":{},"id":"594538a20b5712166af1d9ce","title":"Test
@@ -98,23 +58,28 @@ http_interactions:
         dashboard","created_at":"2017-06-19T09:10:03.777Z","positions":{},"id":"594794eb0b5712166af23119","title":"Post
         Dashboard","widgets":[]},{"creator_user_id":"admin","description":"Put Dashboard","created_at":"2017-06-19T09:10:03.788Z","positions":{},"id":"594794eb0b5712166af2311a","title":"Put_Dashboard","widgets":[]},{"creator_user_id":"admin","description":"post
         dashboard","created_at":"2017-06-19T09:11:12.057Z","positions":{},"id":"594795300b5712166af23164","title":"Post
-        Dashboard","widgets":[]},{"creator_user_id":"admin","description":"Put Dashboard","created_at":"2017-06-19T09:11:12.069Z","positions":{},"id":"594795300b5712166af23165","title":"Put_Dashboard","widgets":[]},{"creator_user_id":"admin","description":"Delete
-        Dashboard","created_at":"2017-06-19T09:11:12.099Z","positions":{},"id":"594795300b5712166af23167","title":"Delete
-        Dashboard","widgets":[]},{"creator_user_id":"admin","description":"post dashboard","created_at":"2017-06-19T09:11:31.227Z","positions":{},"id":"594795430b5712166af2317d","title":"Post
-        Dashboard","widgets":[]},{"creator_user_id":"admin","description":"Put Dashboard","created_at":"2017-06-19T09:11:31.236Z","positions":{},"id":"594795430b5712166af2317e","title":"Put
+        Dashboard","widgets":[]},{"creator_user_id":"admin","description":"Put Dashboard","created_at":"2017-06-19T09:11:12.069Z","positions":{},"id":"594795300b5712166af23165","title":"Put_Dashboard","widgets":[]},{"creator_user_id":"admin","description":"post
+        dashboard","created_at":"2017-06-19T09:11:31.227Z","positions":{},"id":"594795430b5712166af2317d","title":"Post
+        Dashboard","widgets":[]},{"creator_user_id":"admin","description":"Put Dashboard","created_at":"2017-06-19T09:11:31.236Z","positions":{},"id":"594795430b5712166af2317e","title":"Put_Dashboard","widgets":[]},{"creator_user_id":"admin","description":"post
+        dashboard","created_at":"2017-06-19T09:51:08.440Z","positions":{},"id":"59479e8c0b5712166af23b41","title":"Post
+        Dashboard","widgets":[]},{"creator_user_id":"admin","description":"Put Dashboard","created_at":"2017-06-19T09:51:08.450Z","positions":{},"id":"59479e8c0b5712166af23b42","title":"Put_Dashboard","widgets":[]},{"creator_user_id":"admin","description":"test_dashboard","created_at":"2017-06-19T10:19:15.459Z","positions":{},"id":"5947a5230b5712166af24231","title":"Test_Dashboard","widgets":[]},{"creator_user_id":"admin","description":"test_dashboard","created_at":"2017-06-19T10:19:15.509Z","positions":{},"id":"5947a5230b5712166af24232","title":"Test_Dashboard","widgets":[]},{"creator_user_id":"admin","description":"test_dashboard","created_at":"2017-06-19T10:19:15.526Z","positions":{},"id":"5947a5230b5712166af24233","title":"Test_Dashboard","widgets":[]},{"creator_user_id":"admin","description":"Put
+        Dashboard","created_at":"2017-06-19T10:19:15.539Z","positions":{},"id":"5947a5230b5712166af24234","title":"Put
+        Dashboard","widgets":[]},{"creator_user_id":"admin","description":"test_dashboard","created_at":"2017-06-19T10:19:15.567Z","positions":{},"id":"5947a5230b5712166af24235","title":"Test_Dashboard","widgets":[]},{"creator_user_id":"admin","description":"Delete
+        Dashboard","created_at":"2017-06-19T10:19:15.579Z","positions":{},"id":"5947a5230b5712166af24236","title":"Delete
+        Dashboard","widgets":[]},{"creator_user_id":"admin","description":"post dashboard","created_at":"2017-06-19T10:31:33.857Z","positions":{},"id":"5947a8050b5712166af2453e","title":"Post
         Dashboard","widgets":[]},{"creator_user_id":"admin","description":"Delete
-        Dashboard","created_at":"2017-06-19T09:11:31.264Z","positions":{},"id":"594795430b5712166af2317f","title":"Delete
-        Dashboard","widgets":[]},{"creator_user_id":"admin","description":"post dashboard","created_at":"2017-06-19T09:51:08.440Z","positions":{},"id":"59479e8c0b5712166af23b41","title":"Post
-        Dashboard","widgets":[]},{"creator_user_id":"admin","description":"Put Dashboard","created_at":"2017-06-19T09:51:08.450Z","positions":{},"id":"59479e8c0b5712166af23b42","title":"Put
+        Dashboard","created_at":"2017-06-19T10:31:33.918Z","positions":{},"id":"5947a8050b5712166af2453f","title":"Delete
+        Dashboard","widgets":[]},{"creator_user_id":"admin","description":"post dashboard","created_at":"2017-06-19T10:32:09.304Z","positions":{},"id":"5947a8290b5712166af24567","title":"Post
+        Dashboard","widgets":[]},{"creator_user_id":"admin","description":"post dashboard","created_at":"2017-06-19T10:33:18.758Z","positions":{},"id":"5947a86e0b5712166af245b2","title":"Post
         Dashboard","widgets":[]}]}'
     http_version: 
-  recorded_at: Mon, 19 Jun 2017 09:51:08 GMT
+  recorded_at: Mon, 19 Jun 2017 10:33:18 GMT
 - request:
-    method: put
-    uri: http://localhost:9000/api/dashboards/594795430b5712166af2317e
+    method: delete
+    uri: http://localhost:9000/api/dashboards/594534f30b5712166af1d5ed
     body:
-      encoding: UTF-8
-      string: '{"title":"Put_Dashboard"}'
+      encoding: US-ASCII
+      string: ''
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -134,12 +99,12 @@ http_interactions:
       X-Graylog-Node-Id:
       - edfa28fa-d2f7-4700-b564-118ea7605850
       X-Runtime-Microseconds:
-      - '1224'
+      - '9097'
       Date:
-      - Mon, 19 Jun 2017 09:51:08 GMT
+      - Mon, 19 Jun 2017 10:33:18 GMT
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Mon, 19 Jun 2017 09:51:08 GMT
+  recorded_at: Mon, 19 Jun 2017 10:33:18 GMT
 recorded_with: VCR 3.0.3

@@ -1,6 +1,8 @@
+require: rubocop-rspec
 AllCops:
   Exclude:
     - 'test/fixtures/cookbooks/**/*'
+    - 'test/integration/**/*'
     - 'vendor/**/*'
 Lint/UnifiedInteger:
   Enabled: false

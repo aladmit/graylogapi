@@ -1,35 +1,36 @@
-describe 'client', vcr: true do
+describe GraylogAPI::Client, vcr: true do
   include_context 'graylogapi'
   let(:client) { graylogapi.client }
 
   context 'success requests' do
+    let(:dashboard) do
+      client.post('/dashboards', title: 'Test_Dashboard',
+                                 description: 'Test_Dashboard')
+    end
+
+    let(:dashboard_id) do
+      client.get('/dashboards').body['dashboards']
+            .select { |e| e['title'] = 'Test_Dashboard' }
+            .first['id']
+    end
+
+    it 'post' do
+      dash = client.post('/dashboards', title: 'Post Dashboard',
+                                        description: 'post dashboard')
+      expect(dash.body.keys).to include 'dashboard_id'
+    end
+
     it 'get' do
       expect(client.get('/count/total').code).to eq 200
     end
 
-    it 'post' do
-      dashboard = client.post('/dashboards', title: 'Post Dashboard',
-                                             description: 'post dashboard')
-      expect(dashboard.body.keys).to include 'dashboard_id'
-    end
-
     it 'put' do
-      client.post('/dashboards', title: 'Put Dashboard',
-                                 description: 'Put Dashboard')
-      id = client.get('/dashboards').body['dashboards']
-                 .select { |e| e['title'] == 'Put Dashboard' }
-                 .first['id']
-      request = client.put("/dashboards/#{id}", title: 'Put_Dashboard')
-      expect(request.code).to eq 204
+      req = client.put("/dashboards/#{dashboard_id}", title: 'Edited_Dashboard')
+      expect(req.code).to eq 204
     end
 
     it 'delete' do
-      client.post('/dashboards', title: 'Delete Dashboard',
-                                 description: 'Delete Dashboard')
-      id = client.get('/dashboards').body['dashboards']
-                 .select { |e| e['title'] == 'Delete Dashboard' }
-                 .first['id']
-      expect(client.delete("/dashboards/#{id}").code).to eq 204
+      expect(client.delete("/dashboards/#{dashboard_id}").code).to eq 204
     end
   end
 
