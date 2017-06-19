@@ -2,5 +2,7 @@ AllCops:
   Exclude:
     - 'test/fixtures/cookbooks/**/*'
     - 'vendor/**/*'
+Lint/UnifiedInteger:
+  Enabled: false
 Metrics/BlockLength:
   ExcludedMethods: ['describe', 'context']
