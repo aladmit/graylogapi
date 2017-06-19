@@ -9,6 +9,7 @@ Gem::Specification.new do |spec|
   spec.version       = GraylogAPI::VERSION
   spec.authors       = ['Andrey Aleksandrov']
   spec.email         = ['postgred@gmail.com']
+  spec.license       = 'MIT'
 
   spec.summary       = 'Ruby gem for working with Graylog API'
   spec.description   = 'Allows you to work with graylog api from ruby'
@@ -17,6 +18,4 @@ Gem::Specification.new do |spec|
   spec.files         = ['README.md', 'graylogapi.gemspec', 'LICENSE'] +
                        Dir['lib/**/*.rb']
   spec.require_paths = ['lib']
-
-  spec.add_development_dependency 'bundler'
 end
