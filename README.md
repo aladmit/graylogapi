@@ -15,12 +15,12 @@ Ruby gem for working with [Graylog](https://www.graylog.org/) via the [Graylog R
 ## Usage
 
 Structure of gem looks like Graylog REST Api or navigation menu in UI.
-For example, you can find `Inputs` in `System/Inputs` in the UI and you can find `Inputs` in `GraylogAPI.new(...).system.inputs` in the gem.
+For example, you can find **Inputs* in *System/Inputs* in the UI and you can find *Inputs* in `GraylogAPI.new(...).system.inputs` in the gem.
 
 ### get Input by id
 
-  graylogapi = Graylog.new('http://localhost:9000/api', 'username', 'password')
-  graylogapi.system.inputs.by_id('5947d3840b5712166af25009')
+    graylogapi = Graylog.new('http://localhost:9000/api', 'username', 'password')
+    graylogapi.system.inputs.by_id('5947d3840b5712166af25009')
 
 ## Dependencies
 
