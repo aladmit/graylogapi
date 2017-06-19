@@ -57,4 +57,29 @@ describe GraylogAPI::System::Inputs, vcr: true do
       expect(subject.body.keys).to include 'inputs'
     end
   end
+
+  context 'get by id' do
+    subject do
+      options = { title: 'Input by gem123',
+                  type: 'org.graylog.plugins.beats.BeatsInput',
+                  global: true,
+                  configuration: { bind_address: '0.0.0.0',
+                                   port: 5044 } }
+
+      input = graylogapi.system.inputs.create(options)
+      graylogapi.system.inputs.by_id(input.body['id'])
+    end
+
+    it 'code 200' do
+      expect(subject.code).to eq 200
+    end
+
+    it 'contain id' do
+      expect(subject.body.keys).to include 'id'
+    end
+
+    it 'contain title' do
+      expect(subject.body.keys).to include 'title'
+    end
+  end
 end
