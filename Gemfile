@@ -11,6 +11,7 @@ group :development do
   gem 'pry'
   gem 'rb-readline'
   gem 'test-kitchen'
+  gem 'yard'
 end
 
 group :test do

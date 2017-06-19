@@ -7,6 +7,9 @@ class GraylogAPI
       @client = client
     end
 
+    # object for manage System/Inputs
+    #
+    # @return GraylogAPI::System::Inputs
     def inputs
       @inputs ||= Inputs.new(@client)
     end

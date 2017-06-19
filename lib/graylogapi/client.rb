@@ -5,26 +5,51 @@ require 'json'
 class GraylogAPI
   # The client is the entry point to the api
   class Client
+    # @return options of object [Hash]
     attr_reader :options
 
+    # Initializes a new Client object
+    #
+    # @param options [Hash]
+    # @return [GraylogAPI::Client]
     def initialize(options = {})
       @options = options
       uri = URI.parse(options[:base_url])
       @http = Net::HTTP.new(uri.host, uri.port)
     end
 
+    # Make get request to url
+    #
+    # @param url [String]
+    # @param params [Hash]
+    # @return [Struct]
     def get(url, params = {})
       json_request(:get, url, params)
     end
 
+    # Make post request to url
+    #
+    # @param url [String]
+    # @param params [Hash]
+    # @return [Struct]
     def post(url, params = {})
       json_request(:post, url, params)
     end
 
+    # Make post request to url
+    #
+    # @param url [String]
+    # @param params [Hash]
+    # @return [Struct]
     def put(url, params = {})
       json_request(:put, url, params)
     end
 
+    # Make post request to url
+    #
+    # @param url [String]
+    # @param params [Hash]
+    # @return [Struct]
     def delete(url, params = {})
       json_request(:delete, url, params)
     end
