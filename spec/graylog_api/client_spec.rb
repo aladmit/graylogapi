@@ -37,7 +37,7 @@ describe GraylogAPI::Client, vcr: true do
   context 'json_request' do
     %w[get post put delete].each do |method|
       it "#{method} use json_request method" do
-        expect(client).to receive(:json_request)
+        allow(client).to receive(:json_request)
         client.send(method, '/incorrect_page')
       end
     end
