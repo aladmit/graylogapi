@@ -50,8 +50,8 @@ describe GraylogAPI::System::IndexSets, vcr: true do
   context 'create index set' do
     subject(:response) do
       create_options = options.dup
-      create_options[:title] = [*('a'..'z')].sample(8).join
-      create_options[:index_prefix] = [*('a'..'z')].sample(8).join
+      create_options[:title] = generate_string
+      create_options[:index_prefix] = generate_string
       graylogapi.system.index_sets.create(create_options)
     end
 

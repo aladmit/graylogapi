@@ -13,6 +13,10 @@ class GraylogAPI
       def create(params)
         @client.json_request(:post, '/system/indices/index_sets', params)
       end
+
+      def by_id(id)
+        @client.json_request(:get, "/system/indices/index_sets/#{id}")
+      end
     end
   end
 end

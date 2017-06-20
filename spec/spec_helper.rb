@@ -19,4 +19,8 @@ RSpec.shared_context 'graylogapi' do
                    user: 'admin',
                    pass: 'admin')
   end
+
+  def generate_string(length = 8)
+    [*('a'..'z')].sample(length).join
+  end
 end
