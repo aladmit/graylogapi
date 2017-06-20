@@ -10,7 +10,7 @@ Ruby gem for working with [Graylog](https://www.graylog.org/) via the [Graylog R
 
 ## Installation
 
-    gem install zabbixapi
+    gem install graylogapi
 
 ## Usage
 
