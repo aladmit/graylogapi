@@ -27,14 +27,14 @@ http_interactions:
       X-Graylog-Node-Id:
       - edfa28fa-d2f7-4700-b564-118ea7605850
       X-Runtime-Microseconds:
-      - '189'
+      - '276'
       Date:
-      - Mon, 19 Jun 2017 10:33:18 GMT
+      - Tue, 20 Jun 2017 07:49:15 GMT
       Content-Length:
       - '0'
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Mon, 19 Jun 2017 10:33:18 GMT
+  recorded_at: Tue, 20 Jun 2017 07:49:15 GMT
 recorded_with: VCR 3.0.3

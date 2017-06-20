@@ -1,10 +1,17 @@
 require 'net/http'
 require 'uri'
-require 'json'
+require 'graylogapi/client/response'
 
 class GraylogAPI
   # The client is the entry point to the api
   class Client
+    METHODS = {
+      delete: Net::HTTP::Delete,
+      get: Net::HTTP::Get,
+      post: Net::HTTP::Post,
+      put: Net::HTTP::Put
+    }.freeze
+
     # @return options of object [Hash]
     attr_reader :options
 
@@ -18,95 +25,35 @@ class GraylogAPI
       @http = Net::HTTP.new(uri.host, uri.port)
     end
 
-    # Make get request to url
+    # Make request to the API
     #
-    # @param url [String]
-    # @param params [Hash]
-    # @return [Struct]
-    def get(url, params = {})
-      json_request(:get, url, params)
-    end
-
-    # Make post request to url
-    #
-    # @param url [String]
-    # @param params [Hash]
-    # @return [Struct]
-    def post(url, params = {})
-      json_request(:post, url, params)
-    end
-
-    # Make post request to url
-    #
-    # @param url [String]
-    # @param params [Hash]
-    # @return [Struct]
-    def put(url, params = {})
-      json_request(:put, url, params)
-    end
-
-    # Make post request to url
-    #
-    # @param url [String]
-    # @param params [Hash]
-    # @return [Struct]
-    def delete(url, params = {})
-      json_request(:delete, url, params)
-    end
-
-    private
-
+    # @param method [Symbol] can be :get, :post, :delete, :put
+    # @param path [String] url
+    # @param params [Hash] request params
+    # @return Struct
     def json_request(method, path, params = {})
-      request = method("#{method}_request").call(path, params)
+      request = request(method, path, params)
       request.basic_auth(options[:user], options[:pass])
       request.add_field('Content-Type', 'application/json')
       response = @http.request(request)
 
-      response_struct(response)
+      Response.new(response)
     rescue
       response
     end
 
-    def response_struct(response)
-      struct = Struct.new(:code, :body)
+    private
 
-      code = response.code.to_i
-      body = parse_body(response.body)
-      struct.new(code, body)
-    end
-
-    def parse_body(body)
-      if body.nil? || body.empty?
-        {}
-      else
-        begin
-          JSON.parse(body)
-        rescue
-          body
-        end
+    def request(method, path, params = {})
+      case method
+      when :get, :delete
+        full_path = [options[:base_url] + path, URI.encode_www_form(params)]
+        METHODS[method].new(full_path.join('?'))
+      when :post, :put
+        req = METHODS[method].new(options[:base_url] + path)
+        req.body = params.to_json
+        req
       end
-    end
-
-    def get_request(path, params = {})
-      full_path = [options[:base_url] + path, URI.encode_www_form(params)]
-      Net::HTTP::Get.new(full_path.join('?'))
-    end
-
-    def post_request(path, params = {})
-      req = Net::HTTP::Post.new(options[:base_url] + path)
-      req.body = params.to_json
-      req
-    end
-
-    def put_request(path, params = {})
-      req = Net::HTTP::Put.new(options[:base_url] + path)
-      req.body = params.to_json
-      req
-    end
-
-    def delete_request(path, params = {})
-      full_path = [options[:base_url] + path, URI.encode_www_form(params)]
-      Net::HTTP::Delete.new(full_path.join('?'))
     end
   end
 end
