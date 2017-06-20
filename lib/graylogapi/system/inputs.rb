@@ -10,14 +10,14 @@ class GraylogAPI
       #
       # @return [Struct]
       def all
-        @client.get('/system/inputs')
+        @client.json_request(:get, '/system/inputs')
       end
 
       # get input by input id
       #
       # @return [Struct]
       def by_id(id)
-        @client.get("/system/inputs/#{id}")
+        @client.json_request(:get, "/system/inputs/#{id}")
       end
 
       # create input
@@ -25,7 +25,7 @@ class GraylogAPI
       # @param params [Hash]
       # @return [Struct]
       def create(params = {})
-        @client.post('/system/inputs', params)
+        @client.json_request(:post, '/system/inputs', params)
       end
 
       # update input
@@ -33,7 +33,7 @@ class GraylogAPI
       # @param params [Hash]
       # @return [Struct]
       def update(id, params = {})
-        @client.put("/system/inputs/#{id}", params)
+        @client.json_request(:put, "/system/inputs/#{id}", params)
       end
 
       # delete input
@@ -41,7 +41,7 @@ class GraylogAPI
       # @param params [Hash]
       # @return [Struct]
       def delete(id, params = {})
-        @client.delete("/system/inputs/#{id}", params)
+        @client.json_request(:delete, "/system/inputs/#{id}", params)
       end
     end
   end
