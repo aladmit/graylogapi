@@ -1,6 +1,6 @@
 require 'net/http'
 require 'uri'
-require 'json'
+require 'graylogapi/client/response'
 
 class GraylogAPI
   # The client is the entry point to the api
@@ -37,7 +37,7 @@ class GraylogAPI
       request.add_field('Content-Type', 'application/json')
       response = @http.request(request)
 
-      response_struct(response)
+      Response.new(response)
     rescue
       response
     end
@@ -53,26 +53,6 @@ class GraylogAPI
         req = METHODS[method].new(options[:base_url] + path)
         req.body = params.to_json
         req
-      end
-    end
-
-    def response_struct(response)
-      struct = Struct.new(:code, :body)
-
-      code = response.code.to_i
-      body = parse_body(response.body)
-      struct.new(code, body)
-    end
-
-    def parse_body(body)
-      if body.nil? || body.empty?
-        {}
-      else
-        begin
-          JSON.parse(body)
-        rescue
-          body
-        end
       end
     end
   end

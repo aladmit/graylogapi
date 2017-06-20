@@ -23,25 +23,25 @@ http_interactions:
       message: Created
     headers:
       Location:
-      - http://10.211.55.25:9000/api/system/inputs/5947d5610b5712166af2521d
+      - http://10.211.55.25:9000/api/system/inputs/5948d37b0b5712166af27a58
       X-Graylog-Node-Id:
       - edfa28fa-d2f7-4700-b564-118ea7605850
       X-Runtime-Microseconds:
-      - '1538'
+      - '2772'
       Content-Type:
       - application/json
       Date:
-      - Mon, 19 Jun 2017 13:45:05 GMT
+      - Tue, 20 Jun 2017 07:49:15 GMT
       Content-Length:
       - '33'
     body:
       encoding: UTF-8
-      string: '{"id":"5947d5610b5712166af2521d"}'
+      string: '{"id":"5948d37b0b5712166af27a58"}'
     http_version: 
-  recorded_at: Mon, 19 Jun 2017 13:45:05 GMT
+  recorded_at: Tue, 20 Jun 2017 07:49:15 GMT
 - request:
     method: put
-    uri: http://localhost:9000/api/system/inputs/5947d5610b5712166af2521d
+    uri: http://localhost:9000/api/system/inputs/5948d37b0b5712166af27a58
     body:
       encoding: UTF-8
       string: '{"title":"Input by gem123","type":"org.graylog.plugins.beats.BeatsInput","global":true,"configuration":{"bind_address":"0.0.0.0","port":5044}}'
@@ -62,20 +62,20 @@ http_interactions:
       message: Created
     headers:
       Location:
-      - http://10.211.55.25:9000/api/system/inputs/5947d5610b5712166af2521d
+      - http://10.211.55.25:9000/api/system/inputs/5948d37b0b5712166af27a58
       X-Graylog-Node-Id:
       - edfa28fa-d2f7-4700-b564-118ea7605850
       X-Runtime-Microseconds:
-      - '2462'
+      - '1827'
       Content-Type:
       - application/json
       Date:
-      - Mon, 19 Jun 2017 13:45:05 GMT
+      - Tue, 20 Jun 2017 07:49:15 GMT
       Content-Length:
       - '33'
     body:
       encoding: UTF-8
-      string: '{"id":"5947d5610b5712166af2521d"}'
+      string: '{"id":"5948d37b0b5712166af27a58"}'
     http_version: 
-  recorded_at: Mon, 19 Jun 2017 13:45:05 GMT
+  recorded_at: Tue, 20 Jun 2017 07:49:15 GMT
 recorded_with: VCR 3.0.3

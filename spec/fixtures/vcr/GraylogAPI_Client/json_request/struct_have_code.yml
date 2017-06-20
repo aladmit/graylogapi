@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Mon, 19 Jun 2017 10:33:18 GMT
+      - Tue, 20 Jun 2017 07:49:15 GMT
       Content-Length:
       - '1290'
     body:
@@ -47,5 +47,5 @@ http_interactions:
         \   \n    <script src=\"/assets/app.35e28e4da7743596569a.js\"></script>\n
         \   \n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Mon, 19 Jun 2017 10:33:18 GMT
+  recorded_at: Tue, 20 Jun 2017 07:49:15 GMT
 recorded_with: VCR 3.0.3
