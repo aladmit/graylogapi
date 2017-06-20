@@ -1,22 +1,29 @@
+require 'securerandom'
+
 describe GraylogAPI::System::IndexSets, vcr: true do
   include_context 'graylogapi'
 
   let(:options) do
     {
-      title: 'Index set', index_prefix: 'prefix', shards: 4, replicas: 0,
-      rotation_strategy_class: 'org.graylog2.indexer.rotation.strategies.MessageCountRotationStrategy',
+      title: "Index set",
+      index_prefix: "test",
+      shards: 4,
+      replicas: 0,
+      rotation_strategy_class:"org.graylog2.indexer.rotation.strategies.MessageCountRotationStrategy",
       rotation_strategy: {
-        type: 'org.graylog2.indexer.rotation.strategies.MessageCountRotationStrategyConfig',
-        max_docs_per_index: 20000000
+        type:"org.graylog2.indexer.rotation.strategies.MessageCountRotationStrategyConfig",
+        max_docs_per_index:20000000
       },
-      retention_strategy_class: 'org.graylog2.indexer.retention.strategies.DeletionRetentionStrategy',
-      retention_strategy: {
-        type: 'org.graylog2.indexer.retention.strategies.DeletionRetentionStrategyConfig',
+      retention_strategy_class:"org.graylog2.indexer.retention.strategies.DeletionRetentionStrategy",
+      retention_strategy:{
+        type:"org.graylog2.indexer.retention.strategies.DeletionRetentionStrategyConfig",
         max_number_of_indices: 20
       },
-      creation_date: '2017-06-20T10:32:10.89Z', index_analyzer: 'standard',
-      index_optimization_max_num_segments: 1, index_optimization_disabled: false,
-      writable: true
+      creation_date:"2017-06-20T10:32:10.89Z",
+      index_analyzer:"standard",
+      index_optimization_max_num_segments:1,
+      index_optimization_disabled:false,
+      writable:true
     }
   end
 
@@ -42,7 +49,10 @@ describe GraylogAPI::System::IndexSets, vcr: true do
 
   context 'create index set' do
     subject(:response) do
-      graylogapi.system.index_sets.create(options)
+      create_options = options.dup
+      create_options[:title] = [*('a'..'z')].sample(8).join
+      create_options[:index_prefix] = [*('a'..'z')].sample(8).join
+      graylogapi.system.index_sets.create(create_options)
     end
 
     it 'code 200' do
@@ -51,10 +61,6 @@ describe GraylogAPI::System::IndexSets, vcr: true do
 
     it 'have id' do
       expect(response.body.keys).to include 'id'
-    end
-
-    it 'have title' do
-      expect(response.body['title']).to eq options[:title]
     end
   end
 

@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:9000/api/system/indices/index_sets
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW46YWRtaW4=
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Graylog-Node-Id:
+      - 73212a64-1966-4eb1-88f2-9e7f2ef14533
+      X-Runtime-Microseconds:
+      - '2459'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 20 Jun 2017 12:08:59 GMT
+      Content-Length:
+      - '3876'
+    body:
+      encoding: UTF-8
+      string: '{"total":4,"index_sets":[{"id":"59490a4a95cced1669a9bf57","title":"Default
+        index set","description":"The Graylog default index set","index_prefix":"graylog","shards":4,"replicas":0,"rotation_strategy_class":"org.graylog2.indexer.rotation.strategies.MessageCountRotationStrategy","rotation_strategy":{"type":"org.graylog2.indexer.rotation.strategies.AutoValue_MessageCountRotationStrategyConfig","type":"org.graylog2.indexer.rotation.strategies.MessageCountRotationStrategyConfig","max_docs_per_index":20000000},"retention_strategy_class":"org.graylog2.indexer.retention.strategies.DeletionRetentionStrategy","retention_strategy":{"type":"org.graylog2.indexer.retention.strategies.AutoValue_DeletionRetentionStrategyConfig","type":"org.graylog2.indexer.retention.strategies.DeletionRetentionStrategyConfig","max_number_of_indices":20},"creation_date":"2017-06-20T11:43:06.722Z","index_analyzer":"standard","index_optimization_max_num_segments":1,"index_optimization_disabled":false,"writable":true,"default":true},{"id":"59490a7095cced1669a9bf94","title":"Index
+        set","description":null,"index_prefix":"gkg","shards":4,"replicas":0,"rotation_strategy_class":"org.graylog2.indexer.rotation.strategies.MessageCountRotationStrategy","rotation_strategy":{"type":"org.graylog2.indexer.rotation.strategies.AutoValue_MessageCountRotationStrategyConfig","type":"org.graylog2.indexer.rotation.strategies.MessageCountRotationStrategyConfig","max_docs_per_index":20000000},"retention_strategy_class":"org.graylog2.indexer.retention.strategies.DeletionRetentionStrategy","retention_strategy":{"type":"org.graylog2.indexer.retention.strategies.AutoValue_DeletionRetentionStrategyConfig","type":"org.graylog2.indexer.retention.strategies.DeletionRetentionStrategyConfig","max_number_of_indices":20},"creation_date":"2017-06-20T10:32:10.89Z","index_analyzer":"standard","index_optimization_max_num_segments":1,"index_optimization_disabled":false,"writable":true,"default":false},{"id":"59490a9495cced1669a9bfbd","title":"Index
+        set","description":null,"index_prefix":"prefix","shards":4,"replicas":0,"rotation_strategy_class":"org.graylog2.indexer.rotation.strategies.MessageCountRotationStrategy","rotation_strategy":{"type":"org.graylog2.indexer.rotation.strategies.AutoValue_MessageCountRotationStrategyConfig","type":"org.graylog2.indexer.rotation.strategies.MessageCountRotationStrategyConfig","max_docs_per_index":20000000},"retention_strategy_class":"org.graylog2.indexer.retention.strategies.DeletionRetentionStrategy","retention_strategy":{"type":"org.graylog2.indexer.retention.strategies.AutoValue_DeletionRetentionStrategyConfig","type":"org.graylog2.indexer.retention.strategies.DeletionRetentionStrategyConfig","max_number_of_indices":20},"creation_date":"2017-06-20T10:32:10.89Z","index_analyzer":"standard","index_optimization_max_num_segments":1,"index_optimization_disabled":false,"writable":true,"default":false},{"id":"59490f3895cced1669a9c4c0","title":"Index
+        set","description":null,"index_prefix":"test","shards":4,"replicas":0,"rotation_strategy_class":"org.graylog2.indexer.rotation.strategies.MessageCountRotationStrategy","rotation_strategy":{"type":"org.graylog2.indexer.rotation.strategies.AutoValue_MessageCountRotationStrategyConfig","type":"org.graylog2.indexer.rotation.strategies.MessageCountRotationStrategyConfig","max_docs_per_index":20000000},"retention_strategy_class":"org.graylog2.indexer.retention.strategies.DeletionRetentionStrategy","retention_strategy":{"type":"org.graylog2.indexer.retention.strategies.AutoValue_DeletionRetentionStrategyConfig","type":"org.graylog2.indexer.retention.strategies.DeletionRetentionStrategyConfig","max_number_of_indices":20},"creation_date":"2017-06-20T10:32:10.89Z","index_analyzer":"standard","index_optimization_max_num_segments":1,"index_optimization_disabled":false,"writable":true,"default":false}],"stats":{}}'
+    http_version: 
+  recorded_at: Tue, 20 Jun 2017 12:08:59 GMT
+recorded_with: VCR 3.0.3
