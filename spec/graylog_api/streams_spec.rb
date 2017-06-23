@@ -6,7 +6,7 @@ describe GraylogAPI::Streams, vcr: true do
   context 'create stream' do
     subject(:response) do
       req = graylogapi.streams.create(title: 'test', index_set_id: index_id, rules: [])
-      graylogapi.streams.delete(req.body['id'])
+      graylogapi.streams.delete(req.body['stream_id'])
       req
     end
 
@@ -22,7 +22,7 @@ describe GraylogAPI::Streams, vcr: true do
   context 'delete stream' do
     subject(:response) do
       stream = graylogapi.streams.create(title: 'test', index_set_id: index_id, rules: [])
-      graylogapi.streams.delete(stream.body['id'])
+      graylogapi.streams.delete(stream.body['stream_id'])
     end
 
     it 'code 204' do
