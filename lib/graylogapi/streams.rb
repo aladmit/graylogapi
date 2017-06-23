@@ -21,6 +21,10 @@ class GraylogAPI
       @client.json_request(:get, "/streams/#{id}")
     end
 
+    def update(id, params = {})
+      @client.json_request(:put, "/streams/#{id}", params)
+    end
+
     def delete(id, params = {})
       @client.json_request(:delete, "/streams/#{id}", params)
     end
