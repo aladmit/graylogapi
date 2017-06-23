@@ -37,9 +37,13 @@ For example, you can find *Inputs* in *System/Inputs* in the UI and you can find
 ## Supported methods
 
 * **Alerts**: Manage stream alerts for all streams
-  * recent(params) — Get the most recent alarms of all streams.         
+  * recent(params) — Get the most recent alarms of all streams.
   * paginated(params) — Get alarms of all streams, filtered by specifying limit and offset parameters.
   * by_id(id, params) — Get an alert by ID.
+* **System/IndexSets**: Index sets
+  * all — Get a list of all index sets.
+  * create(params) — Create index set.
+  * by_id(id) — Get index set by id.
 * **System/Inputs**: Message inputs
   * all — Get all inputs.
   * by_id(id, params) — Get information of a single input on this node.
@@ -54,4 +58,3 @@ Copytight (c) 2017 Andrey Aleksandrov
 See [LICENSE][] for details.
 
 [license]: LICENSE.md
-
