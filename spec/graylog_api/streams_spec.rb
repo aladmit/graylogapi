@@ -3,6 +3,24 @@ describe GraylogAPI::Streams, vcr: true do
 
   let(:index_id) { graylogapi.system.index_sets.all.body['index_sets'].find { |i| i['title'] == 'Default index set' }['id'] }
 
+  context 'get all streams' do
+    subject(:response) do
+      graylogapi.streams.all
+    end
+
+    it 'code 200' do
+      expect(response.code).to eq 200
+    end
+
+    it 'have total count' do
+      expect(response.body.keys).to include 'total'
+    end
+
+    it 'have streams' do
+      expect(response.body.keys).to include 'streams'
+    end
+  end
+
   context 'create stream' do
     subject(:response) do
       req = graylogapi.streams.create(title: 'test', index_set_id: index_id, rules: [])
@@ -16,6 +34,48 @@ describe GraylogAPI::Streams, vcr: true do
 
     it 'have stream_id' do
       expect(response.body.keys).to include 'stream_id'
+    end
+  end
+
+  context 'enabled streams' do
+    subject(:response) do
+      graylogapi.streams.enabled
+    end
+
+    it 'code 200' do
+      expect(response.code).to eq 200
+    end
+
+    it 'have total' do
+      expect(response.body.keys).to include 'total'
+    end
+
+    it 'have streams' do
+      expect(response.body.keys).to include 'streams'
+    end
+  end
+
+  context 'get stream by id' do
+    subject(:response) do
+      req = graylogapi.streams.by_id(stream.body['id'])
+      graylogapi.streams.delete(stream.body['id'])
+      req
+    end
+
+    let(:stream) do
+      graylogapi.streams.create(title: 'test', index_set_id: index_id, rules: [])
+    end
+
+    it 'code 200' do
+      expect(response.code).to eq 200
+    end
+
+    it 'have id' do
+      expect(response.body['id']).to eq stream.body['id']
+    end
+
+    it 'have title' do
+      expect(response.body['title']).to eq stream.body['title']
     end
   end
 
