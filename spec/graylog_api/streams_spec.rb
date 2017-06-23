@@ -79,6 +79,28 @@ describe GraylogAPI::Streams, vcr: true do
     end
   end
 
+  context 'update stream' do
+    subject(:response) do
+      graylogapi.streams.update(stream.body['id'], title: 'test2')
+    end
+
+    let(:stream) do
+      graylogapi.streams.create(title: 'test', index_set_id: index_id, rules: [])
+    end
+
+    it 'code 200' do
+      expect(response.code).to eq 200
+    end
+
+    it 'have id' do
+      expect(response.body['id']).to eq stream.body['id']
+    end
+
+    it 'have title' do
+      expect(response.body['title']).to eq 'test2'
+    end
+  end
+
   context 'delete stream' do
     subject(:response) do
       stream = graylogapi.streams.create(title: 'test', index_set_id: index_id, rules: [])
