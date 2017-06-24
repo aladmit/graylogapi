@@ -8,6 +8,10 @@ class GraylogAPI
       def node
         @client.json_request(:get, '/system/cluster/node')
       end
+
+      def nodes
+        @client.json_request(:get, '/system/cluster/nodes')
+      end
     end
   end
 end

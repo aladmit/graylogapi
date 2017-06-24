@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:9000/api/system/cluster/nodes
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW46YWRtaW4=
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Graylog-Node-Id:
+      - 87e17323-0a19-40d7-8e24-2cbccefdd296
+      X-Runtime-Microseconds:
+      - '889'
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 24 Jun 2017 19:20:02 GMT
+      Content-Length:
+      - '321'
+    body:
+      encoding: UTF-8
+      string: '{"nodes":[{"cluster_id":"92320fbf-a90f-41cf-b286-a4cdf9a241fc","node_id":"87e17323-0a19-40d7-8e24-2cbccefdd296","type":"server","transport_address":"http://10.211.55.29:9000/api/","last_seen":"2017-06-24T19:20:01.000Z","short_node_id":"87e17323","hostname":"graylog2-centos-72.vagrantup.com","is_master":true}],"total":1}'
+    http_version: 
+  recorded_at: Sat, 24 Jun 2017 19:20:02 GMT
+recorded_with: VCR 3.0.3
