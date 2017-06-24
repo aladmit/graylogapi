@@ -40,6 +40,18 @@ For example, you can find *Inputs* in *System/Inputs* in the UI and you can find
   * recent(params) — Get the most recent alarms of all streams.
   * paginated(params) — Get alarms of all streams, filtered by specifying limit and offset parameters.
   * by_id(id, params) — Get an alert by ID.
+* **Streams**: Manage streams
+  * all — Get a list of all streams.
+  * create(params) — Create a stream.
+  * enabled — Get a list of all enabled streams.
+  * by_id — Get a single stream.
+  * update(id, params) — Update a stream.
+  * delete(id) — Delete a stream.
+  * clone(id, params) — Clone a stream.
+  * pause(id) — Pause a stream.
+  * resume(id) — Resume a stream.
+
+
 * **System/IndexSets**: Index sets
   * all — Get a list of all index sets.
   * create(params) — Create index set.
