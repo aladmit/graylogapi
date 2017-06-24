@@ -19,6 +19,10 @@ class GraylogAPI
         body[key]
       end
 
+      def success?
+        (200..299).cover? code
+      end
+
       private
 
       def parse_body(body)

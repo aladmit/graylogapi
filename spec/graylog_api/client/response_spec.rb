@@ -14,4 +14,8 @@ describe GraylogAPI::Client::Response, vcr: true do
   it 'get field like hash' do
     expect(response['cluster_id']).to eq response.body['cluster_id']
   end
+
+  it 'check success' do
+    expect(response.success?).to eq true
+  end
 end
