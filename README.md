@@ -40,6 +40,10 @@ For example, you can find *Inputs* in *System/Inputs* in the UI and you can find
   * recent(params) — Get the most recent alarms of all streams.
   * paginated(params) — Get alarms of all streams, filtered by specifying limit and offset parameters.
   * by_id(id, params) — Get an alert by ID.
+* **System/Cluster**: Node discovery
+  * node — Infromation about this node.
+  * nodes — List all active nodes in this cluster.
+  * node_by_id — Infromation about a node.
 * **System/IndexSets**: Index sets
   * all — Get a list of all index sets.
   * create(params) — Create index set.
