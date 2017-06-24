@@ -14,4 +14,22 @@ describe GraylogAPI::System, vcr: true do
       expect(response.body.keys).to include 'node_id'
     end
   end
+
+  context 'jvm information' do
+    subject(:response) do
+      graylogapi.system.jvm
+    end
+
+    it 'code 200' do
+      expect(response.code).to eq 200
+    end
+
+    it 'contain node_id' do
+      expect(response.body.keys).to include 'node_id'
+    end
+
+    it 'contain used_memory' do
+      expect(response.body.keys).to include 'used_memory'
+    end
+  end
 end

@@ -12,6 +12,10 @@ class GraylogAPI
       @client.json_request(:get, '/system')
     end
 
+    def jvm
+      @client.json_request(:get, '/system/jvm')
+    end
+
     # object for manage System/Inputs
     #
     # @return GraylogAPI::System::Inputs
