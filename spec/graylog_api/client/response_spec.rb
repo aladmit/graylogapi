@@ -10,4 +10,8 @@ describe GraylogAPI::Client::Response, vcr: true do
   it 'have body' do
     expect(response.body.class).to eq Hash
   end
+
+  it 'get field like hash' do
+    expect(response['cluster_id']).to eq response.body['cluster_id']
+  end
 end
