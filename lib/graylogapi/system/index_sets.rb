@@ -17,6 +17,10 @@ class GraylogAPI
       def by_id(id)
         @client.json_request(:get, "/system/indices/index_sets/#{id}")
       end
+
+      def delete(id)
+        @client.json_request(:delete, "/system/indices/index_sets/#{id}")
+      end
     end
   end
 end

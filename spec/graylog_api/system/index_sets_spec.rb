@@ -11,7 +11,7 @@ describe GraylogAPI::System::IndexSets, vcr: true do
       replicas: 0,
       rotation_strategy_class: 'org.graylog2.indexer.rotation.strategies.MessageCountRotationStrategy',
       rotation_strategy: {
-        type: '$org.graylog2.indexer.rotation.strategies.MessageCountRotationStrategyConfig',
+        type: 'org.graylog2.indexer.rotation.strategies.MessageCountRotationStrategyConfig',
         max_docs_per_index: 20_000_000
       },
       retention_strategy_class: 'org.graylog2.indexer.retention.strategies.DeletionRetentionStrategy',
@@ -50,9 +50,13 @@ describe GraylogAPI::System::IndexSets, vcr: true do
   context 'create index set' do
     subject(:response) do
       create_options = options.dup
-      create_options[:title] = generate_string
-      create_options[:index_prefix] = generate_string
-      graylogapi.system.index_sets.create(create_options)
+      title = generate_string
+      create_options[:title] = title
+      create_options[:index_prefix] = title
+      req = graylogapi.system.index_sets.create(create_options)
+      sleep 1
+      graylogapi.system.index_sets.delete(req.body['id'])
+      req
     end
 
     it 'code 200' do
@@ -65,20 +69,44 @@ describe GraylogAPI::System::IndexSets, vcr: true do
   end
 
   context 'get index set by id' do
-    subject(:response) { graylogapi.system.index_sets.by_id(index_set['id']) }
-
-    let(:index_set) { graylogapi.system.index_sets.all.body['index_sets'].first }
+    subject(:response) do
+      create_options = options.dup
+      title = generate_string
+      create_options[:title] = title
+      create_options[:index_prefix] = title
+      index_set = graylogapi.system.index_sets.create(create_options)
+      req = graylogapi.system.index_sets.by_id(index_set.body['id'])
+      sleep 1
+      graylogapi.system.index_sets.delete(index_set.body['id'])
+      req
+    end
 
     it 'code 200' do
       expect(response.code).to eq 200
     end
 
     it 'have id' do
-      expect(response.body['id']).to eq index_set['id']
+      expect(response.body.keys).to include 'id'
     end
 
     it 'have title' do
-      expect(response.body['title']).to eq index_set['title']
+      expect(response.body.keys).to include 'title'
+    end
+  end
+
+  context 'delete index set' do
+    subject(:response) do
+      create_options = options.dup
+      title = generate_string
+      create_options[:title] = title
+      create_options[:index_prefix] = title
+      index_set = graylogapi.system.index_sets.create(create_options)
+      sleep 1
+      graylogapi.system.index_sets.delete(index_set.body['id'])
+    end
+
+    it 'code 204' do
+      expect(response.code).to eq 204
     end
   end
 end
