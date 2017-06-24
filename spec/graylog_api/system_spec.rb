@@ -32,4 +32,18 @@ describe GraylogAPI::System, vcr: true do
       expect(response.body.keys).to include 'used_memory'
     end
   end
+
+  context 'thread dump' do
+    subject(:response) do
+      graylogapi.system.thread_dump
+    end
+
+    it 'code 200' do
+      expect(response.code).to eq 200
+    end
+
+    it 'contain thread dump' do
+      expect(response.body.keys).to include 'threaddump'
+    end
+  end
 end
