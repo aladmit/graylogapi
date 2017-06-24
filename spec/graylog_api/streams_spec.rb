@@ -113,4 +113,22 @@ describe GraylogAPI::Streams, vcr: true do
       expect(response.code).to eq 204
     end
   end
+
+  context 'clone stream' do
+    subject(:response) do
+      created = graylogapi.streams.create(title: 'created', index_set_id: index_id)
+      cloned = graylogapi.streams.clone(created.body['stream_id'], title: 'cloned', description: '', index_set_id: index_id)
+      graylogapi.streams.delete(created.body['stream_id'])
+      graylogapi.streams.delete(cloned.body['stream_id'])
+      cloned
+    end
+
+    it 'code 201' do
+      expect(response.code).to eq 201
+    end
+
+    it 'have stream_id' do
+      expect(response.body.keys).to include 'stream_id'
+    end
+  end
 end

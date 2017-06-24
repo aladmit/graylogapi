@@ -28,5 +28,9 @@ class GraylogAPI
     def delete(id, params = {})
       @client.json_request(:delete, "/streams/#{id}", params)
     end
+
+    def clone(id, params = {})
+      @client.json_request(:post, "/streams/#{id}/clone", params)
+    end
   end
 end
