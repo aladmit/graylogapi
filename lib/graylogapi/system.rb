@@ -8,6 +8,10 @@ class GraylogAPI
       @client = client
     end
 
+    def overview
+      @client.json_request(:get, '/system')
+    end
+
     # object for manage System/Inputs
     #
     # @return GraylogAPI::System::Inputs
