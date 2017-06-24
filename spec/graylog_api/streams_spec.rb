@@ -144,4 +144,17 @@ describe GraylogAPI::Streams, vcr: true do
       expect(response.code).to eq 204
     end
   end
+
+  context 'resume stream' do
+    subject(:response) do
+      stream = graylogapi.streams.create(title: 'resume', index_set_id: index_id)
+      req = graylogapi.streams.resume(stream.body['stream_id'])
+      graylogapi.streams.delete(stream.body['stream_id'])
+      req
+    end
+
+    it 'code 204' do
+      expect(response.code).to eq 204
+    end
+  end
 end

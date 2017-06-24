@@ -36,5 +36,9 @@ class GraylogAPI
     def pause(id)
       @client.json_request(:post, "/streams/#{id}/pause")
     end
+
+    def resume(id)
+      @client.json_request(:post, "/streams/#{id}/resume")
+    end
   end
 end
