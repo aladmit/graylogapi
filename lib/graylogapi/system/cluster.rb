@@ -12,6 +12,10 @@ class GraylogAPI
       def nodes
         @client.json_request(:get, '/system/cluster/nodes')
       end
+
+      def node_by_id(id)
+        @client.json_request(:get, "/system/cluster/nodes/#{id}")
+      end
     end
   end
 end
