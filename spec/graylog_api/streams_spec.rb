@@ -131,4 +131,17 @@ describe GraylogAPI::Streams, vcr: true do
       expect(response.body.keys).to include 'stream_id'
     end
   end
+
+  context 'pause stream' do
+    subject(:response) do
+      stream = graylogapi.streams.create(title: 'pause', index_set_id: index_id)
+      req = graylogapi.streams.pause(stream.body['stream_id'])
+      graylogapi.streams.delete(stream.body['stream_id'])
+      req
+    end
+
+    it 'code 204' do
+      expect(response.code).to eq 204
+    end
+  end
 end

@@ -32,5 +32,9 @@ class GraylogAPI
     def clone(id, params = {})
       @client.json_request(:post, "/streams/#{id}/clone", params)
     end
+
+    def pause(id)
+      @client.json_request(:post, "/streams/#{id}/pause")
+    end
   end
 end
