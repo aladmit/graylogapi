@@ -10,7 +10,9 @@ describe GraylogAPI::System::Inputs, vcr: true do
                                    port: 5044,
                                    recv_buffer_size: 1_048_576,
                                    tls_client_auth: 'disabled' } }
-      graylogapi.system.inputs.create(options)
+      req = graylogapi.system.inputs.create(options)
+      graylogapi.system.inputs.delete(req.body['id'])
+      req
     end
 
     it 'code 201' do
@@ -31,7 +33,9 @@ describe GraylogAPI::System::Inputs, vcr: true do
                                    port: 5044 } }
 
       input = graylogapi.system.inputs.create(options)
-      graylogapi.system.inputs.update(input.body['id'], options)
+      req = graylogapi.system.inputs.update(input.body['id'], options)
+      graylogapi.system.inputs.delete(input.body['id'])
+      req
     end
 
     it 'code 201' do
@@ -68,7 +72,9 @@ describe GraylogAPI::System::Inputs, vcr: true do
                                    port: 5044 } }
 
       input = graylogapi.system.inputs.create(options)
-      graylogapi.system.inputs.by_id(input.body['id'])
+      req = graylogapi.system.inputs.by_id(input.body['id'])
+      graylogapi.system.inputs.delete(input.body['id'])
+      req
     end
 
     it 'code 200' do
