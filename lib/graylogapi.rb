@@ -2,8 +2,9 @@ libdir = File.dirname(__FILE__)
 $LOAD_PATH.unshift(libdir) unless $LOAD_PATH.include?(libdir)
 
 require 'graylogapi/version'
-require 'graylogapi/client'
 require 'graylogapi/alerts'
+require 'graylogapi/client'
+require 'graylogapi/streams'
 require 'graylogapi/system'
 
 # class for work with graylog api
@@ -27,5 +28,10 @@ class GraylogAPI
   # @return [GraylogAPI::System]
   def system
     @system ||= System.new(@client)
+  end
+
+  # @return [GraylogAPI::Streams]
+  def streams
+    @streams ||= Streams.new(@client)
   end
 end

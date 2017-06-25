@@ -1,0 +1,1657 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:9000/api/system/threaddump
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW46YWRtaW4=
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Graylog-Node-Id:
+      - 87e17323-0a19-40d7-8e24-2cbccefdd296
+      X-Runtime-Microseconds:
+      - '157613'
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 24 Jun 2017 17:07:34 GMT
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"threaddump":"main id=1 state=WAITING\n    - waiting on <0x09596ce8>
+        (a java.lang.Thread)\n    - locked <0x09596ce8> (a java.lang.Thread)\n    at
+        java.lang.Object.wait(Native Method)\n    at java.lang.Thread.join(Thread.java:1252)\n    at
+        java.lang.Thread.join(Thread.java:1326)\n    at org.graylog2.bootstrap.ServerBootstrap.startCommand(ServerBootstrap.java:166)\n    at
+        org.graylog2.bootstrap.CmdLineTool.run(CmdLineTool.java:209)\n    at org.graylog2.bootstrap.Main.main(Main.java:44)\n\nReference
+        Handler id=2 state=WAITING\n    - waiting on <0x2875dd6f> (a java.lang.ref.Reference$Lock)\n    -
+        locked <0x2875dd6f> (a java.lang.ref.Reference$Lock)\n    at java.lang.Object.wait(Native
+        Method)\n    at java.lang.Object.wait(Object.java:502)\n    at java.lang.ref.Reference.tryHandlePending(Reference.java:191)\n    at
+        java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)\n\nFinalizer
+        id=3 state=WAITING\n    - waiting on <0x5c121abc> (a java.lang.ref.ReferenceQueue$Lock)\n    -
+        locked <0x5c121abc> (a java.lang.ref.ReferenceQueue$Lock)\n    at java.lang.Object.wait(Native
+        Method)\n    at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)\n    at
+        java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164)\n    at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)\n\nSignal
+        Dispatcher id=5 state=RUNNABLE\n\ninputbufferprocessor-0 id=14 state=WAITING\n    -
+        waiting on <0x085f960b> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x085f960b> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        com.lmax.disruptor.BlockingWaitStrategy.waitFor(BlockingWaitStrategy.java:45)\n    at
+        com.lmax.disruptor.ProcessingSequenceBarrier.waitFor(ProcessingSequenceBarrier.java:56)\n    at
+        com.lmax.disruptor.WorkProcessor.run(WorkProcessor.java:148)\n    at com.codahale.metrics.InstrumentedThreadFactory$InstrumentedRunnable.run(InstrumentedThreadFactory.java:66)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\ninputbufferprocessor-1 id=15 state=WAITING\n    -
+        waiting on <0x085f960b> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x085f960b> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        com.lmax.disruptor.BlockingWaitStrategy.waitFor(BlockingWaitStrategy.java:45)\n    at
+        com.lmax.disruptor.ProcessingSequenceBarrier.waitFor(ProcessingSequenceBarrier.java:56)\n    at
+        com.lmax.disruptor.WorkProcessor.run(WorkProcessor.java:148)\n    at com.codahale.metrics.InstrumentedThreadFactory$InstrumentedRunnable.run(InstrumentedThreadFactory.java:66)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\ninputbufferprocessor-2 id=16 state=WAITING\n    -
+        waiting on <0x085f960b> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x085f960b> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        com.lmax.disruptor.BlockingWaitStrategy.waitFor(BlockingWaitStrategy.java:45)\n    at
+        com.lmax.disruptor.ProcessingSequenceBarrier.waitFor(ProcessingSequenceBarrier.java:56)\n    at
+        com.lmax.disruptor.BatchEventProcessor.run(BatchEventProcessor.java:124)\n    at
+        com.codahale.metrics.InstrumentedThreadFactory$InstrumentedRunnable.run(InstrumentedThreadFactory.java:66)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\ncluster-ClusterId{value=''594cd70776f94e04cbd3bbbe'',
+        description=''null''}-127.0.0.1:27017 id=17 state=TIMED_WAITING\n    - waiting
+        on <0x4893eea2> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x4893eea2> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)\n    at
+        com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.waitForSignalOrTimeout(DefaultServerMonitor.java:224)\n    at
+        com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.waitForNext(DefaultServerMonitor.java:205)\n    at
+        com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:153)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\npool-2-thread-1 id=18 state=TIMED_WAITING\n    -
+        waiting on <0x32bcc4b8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x32bcc4b8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nelasticsearch[graylog-87e17323-0a19-40d7-8e24-2cbccefdd296][[timer]]
+        id=19 state=TIMED_WAITING\n    at java.lang.Thread.sleep(Native Method)\n    at
+        org.elasticsearch.threadpool.ThreadPool$EstimatedTimeThread.run(ThreadPool.java:747)\n\nelasticsearch[graylog-87e17323-0a19-40d7-8e24-2cbccefdd296][scheduler][T#1]
+        id=20 state=TIMED_WAITING\n    - waiting on <0x52624dc6> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x52624dc6> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\noutputbufferprocessor-0 id=22 state=WAITING\n    -
+        waiting on <0x51521dfc> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x51521dfc> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        com.lmax.disruptor.BlockingWaitStrategy.waitFor(BlockingWaitStrategy.java:45)\n    at
+        com.lmax.disruptor.ProcessingSequenceBarrier.waitFor(ProcessingSequenceBarrier.java:56)\n    at
+        com.lmax.disruptor.WorkProcessor.run(WorkProcessor.java:148)\n    at com.codahale.metrics.InstrumentedThreadFactory$InstrumentedRunnable.run(InstrumentedThreadFactory.java:66)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\noutputbufferprocessor-1 id=23 state=WAITING\n    -
+        waiting on <0x51521dfc> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x51521dfc> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        com.lmax.disruptor.BlockingWaitStrategy.waitFor(BlockingWaitStrategy.java:45)\n    at
+        com.lmax.disruptor.ProcessingSequenceBarrier.waitFor(ProcessingSequenceBarrier.java:56)\n    at
+        com.lmax.disruptor.WorkProcessor.run(WorkProcessor.java:148)\n    at com.codahale.metrics.InstrumentedThreadFactory$InstrumentedRunnable.run(InstrumentedThreadFactory.java:66)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\noutputbufferprocessor-2 id=24 state=WAITING\n    -
+        waiting on <0x51521dfc> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x51521dfc> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        com.lmax.disruptor.BlockingWaitStrategy.waitFor(BlockingWaitStrategy.java:45)\n    at
+        com.lmax.disruptor.ProcessingSequenceBarrier.waitFor(ProcessingSequenceBarrier.java:56)\n    at
+        com.lmax.disruptor.WorkProcessor.run(WorkProcessor.java:148)\n    at com.codahale.metrics.InstrumentedThreadFactory$InstrumentedRunnable.run(InstrumentedThreadFactory.java:66)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nprocessbufferprocessor-0 id=25 state=WAITING\n    -
+        waiting on <0x06c7a5e4> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x06c7a5e4> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        com.lmax.disruptor.BlockingWaitStrategy.waitFor(BlockingWaitStrategy.java:45)\n    at
+        com.lmax.disruptor.ProcessingSequenceBarrier.waitFor(ProcessingSequenceBarrier.java:56)\n    at
+        com.lmax.disruptor.WorkProcessor.run(WorkProcessor.java:148)\n    at com.codahale.metrics.InstrumentedThreadFactory$InstrumentedRunnable.run(InstrumentedThreadFactory.java:66)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nprocessbufferprocessor-1 id=26 state=WAITING\n    -
+        waiting on <0x06c7a5e4> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x06c7a5e4> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        com.lmax.disruptor.BlockingWaitStrategy.waitFor(BlockingWaitStrategy.java:45)\n    at
+        com.lmax.disruptor.ProcessingSequenceBarrier.waitFor(ProcessingSequenceBarrier.java:56)\n    at
+        com.lmax.disruptor.WorkProcessor.run(WorkProcessor.java:148)\n    at com.codahale.metrics.InstrumentedThreadFactory$InstrumentedRunnable.run(InstrumentedThreadFactory.java:66)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nprocessbufferprocessor-2 id=27 state=WAITING\n    -
+        waiting on <0x06c7a5e4> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x06c7a5e4> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        com.lmax.disruptor.BlockingWaitStrategy.waitFor(BlockingWaitStrategy.java:45)\n    at
+        com.lmax.disruptor.ProcessingSequenceBarrier.waitFor(ProcessingSequenceBarrier.java:56)\n    at
+        com.lmax.disruptor.WorkProcessor.run(WorkProcessor.java:148)\n    at com.codahale.metrics.InstrumentedThreadFactory$InstrumentedRunnable.run(InstrumentedThreadFactory.java:66)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nprocessbufferprocessor-3 id=28 state=WAITING\n    -
+        waiting on <0x06c7a5e4> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x06c7a5e4> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        com.lmax.disruptor.BlockingWaitStrategy.waitFor(BlockingWaitStrategy.java:45)\n    at
+        com.lmax.disruptor.ProcessingSequenceBarrier.waitFor(ProcessingSequenceBarrier.java:56)\n    at
+        com.lmax.disruptor.WorkProcessor.run(WorkProcessor.java:148)\n    at com.codahale.metrics.InstrumentedThreadFactory$InstrumentedRunnable.run(InstrumentedThreadFactory.java:66)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nprocessbufferprocessor-4 id=29 state=WAITING\n    -
+        waiting on <0x06c7a5e4> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x06c7a5e4> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        com.lmax.disruptor.BlockingWaitStrategy.waitFor(BlockingWaitStrategy.java:45)\n    at
+        com.lmax.disruptor.ProcessingSequenceBarrier.waitFor(ProcessingSequenceBarrier.java:56)\n    at
+        com.lmax.disruptor.WorkProcessor.run(WorkProcessor.java:148)\n    at com.codahale.metrics.InstrumentedThreadFactory$InstrumentedRunnable.run(InstrumentedThreadFactory.java:66)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-0 id=30 state=WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-1 id=31 state=WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-2 id=32 state=WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\neventbus-handler-0 id=33 state=WAITING\n    -
+        waiting on <0x1fe0675f> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x1fe0675f> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nInputSetupService id=35 state=WAITING\n    -
+        waiting on <0x7292559f> (a java.util.concurrent.CountDownLatch$Sync)\n    -
+        locked <0x7292559f> (a java.util.concurrent.CountDownLatch$Sync)\n    at sun.misc.Unsafe.park(Native
+        Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:836)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:997)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1304)\n    at
+        java.util.concurrent.CountDownLatch.await(CountDownLatch.java:231)\n    at
+        com.google.common.util.concurrent.Uninterruptibles.awaitUninterruptibly(Uninterruptibles.java:57)\n    at
+        org.graylog2.shared.initializers.InputSetupService.run(InputSetupService.java:98)\n    at
+        com.google.common.util.concurrent.AbstractExecutionThreadService$1$2.run(AbstractExecutionThreadService.java:66)\n    at
+        com.google.common.util.concurrent.Callables$4.run(Callables.java:122)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nJournalReader id=38 state=WAITING\n    -
+        waiting on <0x42b83169> (a java.util.concurrent.Semaphore$NonfairSync)\n    -
+        locked <0x42b83169> (a java.util.concurrent.Semaphore$NonfairSync)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:836)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:997)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1304)\n    at
+        java.util.concurrent.Semaphore.acquire(Semaphore.java:312)\n    at org.graylog2.shared.journal.JournalReader.run(JournalReader.java:145)\n    at
+        com.google.common.util.concurrent.AbstractExecutionThreadService$1$2.run(AbstractExecutionThreadService.java:66)\n    at
+        com.google.common.util.concurrent.Callables$4.run(Callables.java:122)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nindexer-setup-service-0 id=42 state=WAITING\n    -
+        waiting on <0x4e132a3a> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x4e132a3a> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\noutput-setup-service-0 id=43 state=WAITING\n    -
+        waiting on <0x075e6ff6> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x075e6ff6> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-3 id=47 state=WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-4 id=48 state=WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-0 id=49 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-5 id=50 state=WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-6 id=52 state=WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-1 id=53 state=TIMED_WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-7 id=54 state=WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-8 id=55 state=WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-9 id=56 state=WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-10 id=57 state=WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-11 id=58 state=WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-12 id=59 state=WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-13 id=62 state=WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-14 id=63 state=WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-2 id=64 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-3 id=65 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nelasticsearch[graylog-87e17323-0a19-40d7-8e24-2cbccefdd296][[ttl_expire]]
+        id=21 state=TIMED_WAITING\n    - waiting on <0x7668de47> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x7668de47> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2163)\n    at
+        org.elasticsearch.indices.ttl.IndicesTTLService$Notifier.await(IndicesTTLService.java:341)\n    at
+        org.elasticsearch.indices.ttl.IndicesTTLService$PurgerThread.run(IndicesTTLService.java:147)\n\nscheduled-4
+        id=66 state=WAITING\n    - waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-5 id=67 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-6 id=68 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-7 id=69 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-15 id=70 state=WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-16 id=71 state=WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-17 id=72 state=WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-18 id=73 state=WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-19 id=74 state=WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nelasticsearch[graylog-87e17323-0a19-40d7-8e24-2cbccefdd296][transport_client_worker][T#1]{New
+        I/O worker #1} id=75 state=RUNNABLE (running in native)\n    at sun.nio.ch.EPollArrayWrapper.epollWait(Native
+        Method)\n    at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)\n    at
+        sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)\n    at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)\n      -
+        locked java.util.Collections$UnmodifiableSet@128b61f6\n      - locked sun.nio.ch.EPollSelectorImpl@5c8a15a4\n    at
+        sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)\n    at org.jboss.netty.channel.socket.nio.SelectorUtil.select(SelectorUtil.java:68)\n    at
+        org.jboss.netty.channel.socket.nio.AbstractNioSelector.select(AbstractNioSelector.java:434)\n    at
+        org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:212)\n    at
+        org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:89)\n    at
+        org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)\n    at
+        org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)\n    at
+        org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\n    Locked synchronizers: count =
+        1\n      - java.util.concurrent.ThreadPoolExecutor$Worker@1183189a\n\nelasticsearch[graylog-87e17323-0a19-40d7-8e24-2cbccefdd296][transport_client_worker][T#2]{New
+        I/O worker #2} id=76 state=RUNNABLE (running in native)\n    at sun.nio.ch.EPollArrayWrapper.epollWait(Native
+        Method)\n    at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)\n    at
+        sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)\n    at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)\n      -
+        locked java.util.Collections$UnmodifiableSet@7d86792a\n      - locked sun.nio.ch.EPollSelectorImpl@708b486a\n    at
+        sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)\n    at org.jboss.netty.channel.socket.nio.SelectorUtil.select(SelectorUtil.java:68)\n    at
+        org.jboss.netty.channel.socket.nio.AbstractNioSelector.select(AbstractNioSelector.java:434)\n    at
+        org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:212)\n    at
+        org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:89)\n    at
+        org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)\n    at
+        org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)\n    at
+        org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\n    Locked synchronizers: count =
+        1\n      - java.util.concurrent.ThreadPoolExecutor$Worker@6a9e9c83\n\nelasticsearch[graylog-87e17323-0a19-40d7-8e24-2cbccefdd296][transport_client_boss][T#1]{New
+        I/O boss #3} id=80 state=RUNNABLE\n    at sun.nio.ch.EPollArrayWrapper.epollWait(Native
+        Method)\n    at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)\n    at
+        sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)\n    at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)\n      -
+        locked java.util.Collections$UnmodifiableSet@3f764ece\n      - locked sun.nio.ch.EPollSelectorImpl@5bf80d72\n    at
+        sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)\n    at org.jboss.netty.channel.socket.nio.SelectorUtil.select(SelectorUtil.java:68)\n    at
+        org.jboss.netty.channel.socket.nio.AbstractNioSelector.select(AbstractNioSelector.java:434)\n    at
+        org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:212)\n    at
+        org.jboss.netty.channel.socket.nio.NioClientBoss.run(NioClientBoss.java:42)\n    at
+        org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)\n    at
+        org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\n    Locked synchronizers: count =
+        1\n      - java.util.concurrent.ThreadPoolExecutor$Worker@4eadd031\n\nperiodical-org.graylog2.periodical.IndexFailuresPeriodical-0
+        id=82 state=WAITING\n    - waiting on <0x65f31dbf> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x65f31dbf> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        org.graylog2.periodical.IndexFailuresPeriodical.doRun(IndexFailuresPeriodical.java:65)\n    at
+        org.graylog2.plugin.periodical.Periodical.run(Periodical.java:77)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nelasticsearch[graylog-87e17323-0a19-40d7-8e24-2cbccefdd296][[http_server_worker.default]][T#1]{New
+        I/O worker #4} id=83 state=RUNNABLE (running in native)\n    at sun.nio.ch.EPollArrayWrapper.epollWait(Native
+        Method)\n    at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)\n    at
+        sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)\n    at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)\n      -
+        locked java.util.Collections$UnmodifiableSet@6d602161\n      - locked sun.nio.ch.EPollSelectorImpl@a1ddeec\n    at
+        sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)\n    at org.jboss.netty.channel.socket.nio.SelectorUtil.select(SelectorUtil.java:68)\n    at
+        org.jboss.netty.channel.socket.nio.AbstractNioSelector.select(AbstractNioSelector.java:434)\n    at
+        org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:212)\n    at
+        org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:89)\n    at
+        org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)\n    at
+        org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)\n    at
+        org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\n    Locked synchronizers: count =
+        1\n      - java.util.concurrent.ThreadPoolExecutor$Worker@33d2c84d\n\nelasticsearch[graylog-87e17323-0a19-40d7-8e24-2cbccefdd296][[http_server_worker.default]][T#2]{New
+        I/O worker #5} id=84 state=RUNNABLE (running in native)\n    at sun.nio.ch.EPollArrayWrapper.epollWait(Native
+        Method)\n    at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)\n    at
+        sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)\n    at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)\n      -
+        locked java.util.Collections$UnmodifiableSet@26982049\n      - locked sun.nio.ch.EPollSelectorImpl@115fcbc3\n    at
+        sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)\n    at org.jboss.netty.channel.socket.nio.SelectorUtil.select(SelectorUtil.java:68)\n    at
+        org.jboss.netty.channel.socket.nio.AbstractNioSelector.select(AbstractNioSelector.java:434)\n    at
+        org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:212)\n    at
+        org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:89)\n    at
+        org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)\n    at
+        org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)\n    at
+        org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\n    Locked synchronizers: count =
+        1\n      - java.util.concurrent.ThreadPoolExecutor$Worker@6d7ced9a\n\nscheduled-daemon-20
+        id=85 state=WAITING\n    - waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-21 id=86 state=WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nelasticsearch[graylog-87e17323-0a19-40d7-8e24-2cbccefdd296][[http_server_boss.default]][T#1]{New
+        I/O server boss #6} id=87 state=RUNNABLE (running in native)\n    at sun.nio.ch.EPollArrayWrapper.epollWait(Native
+        Method)\n    at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)\n    at
+        sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)\n    at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)\n      -
+        locked java.util.Collections$UnmodifiableSet@668a2f46\n      - locked sun.nio.ch.EPollSelectorImpl@3ab9479d\n    at
+        sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)\n    at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)\n    at
+        org.jboss.netty.channel.socket.nio.NioServerBoss.select(NioServerBoss.java:163)\n    at
+        org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:212)\n    at
+        org.jboss.netty.channel.socket.nio.NioServerBoss.run(NioServerBoss.java:42)\n    at
+        org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)\n    at
+        org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\n    Locked synchronizers: count =
+        1\n      - java.util.concurrent.ThreadPoolExecutor$Worker@16387393\n\nscheduled-daemon-22
+        id=88 state=WAITING\n    - waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-23 id=90 state=WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-24 id=91 state=WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nelasticsearch[graylog-87e17323-0a19-40d7-8e24-2cbccefdd296][clusterService#updateTask][T#1]
+        id=92 state=WAITING\n    - waiting on <0x6e3934b8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x6e3934b8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.PriorityBlockingQueue.take(PriorityBlockingQueue.java:549)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nelasticsearch[graylog-87e17323-0a19-40d7-8e24-2cbccefdd296][generic][T#1]
+        id=93 state=TIMED_WAITING\n    - waiting on <0x64770301> (a java.util.concurrent.SynchronousQueue$TransferStack)\n    -
+        locked <0x64770301> (a java.util.concurrent.SynchronousQueue$TransferStack)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)\n    at
+        java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)\n    at
+        java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362)\n    at
+        java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:941)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1066)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-25 id=95 state=WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-8 id=96 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-26 id=97 state=WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-27 id=98 state=WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-28 id=99 state=WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nelasticsearch[graylog-87e17323-0a19-40d7-8e24-2cbccefdd296][transport_client_timer][T#1]{Hashed
+        wheel timer #2} id=79 state=TIMED_WAITING\n    at java.lang.Thread.sleep(Native
+        Method)\n    at org.jboss.netty.util.HashedWheelTimer$Worker.waitForNextTick(HashedWheelTimer.java:445)\n    at
+        org.jboss.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:364)\n    at
+        org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-daemon-29 id=100 state=TIMED_WAITING\n    -
+        waiting on <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x43d44104> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-9 id=101 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-10 id=103 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-11 id=104 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-12 id=105 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-13 id=106 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-14 id=109 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-15 id=110 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nelasticsearch[graylog-87e17323-0a19-40d7-8e24-2cbccefdd296][listener][T#1]
+        id=111 state=WAITING\n    - waiting on <0x4a847c76> (a java.util.concurrent.LinkedTransferQueue)\n    -
+        locked <0x4a847c76> (a java.util.concurrent.LinkedTransferQueue)\n    at sun.misc.Unsafe.park(Native
+        Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.LinkedTransferQueue.awaitMatch(LinkedTransferQueue.java:737)\n    at
+        java.util.concurrent.LinkedTransferQueue.xfer(LinkedTransferQueue.java:647)\n    at
+        java.util.concurrent.LinkedTransferQueue.take(LinkedTransferQueue.java:1269)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-16 id=112 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-17 id=113 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-18 id=114 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-19 id=115 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-20 id=116 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-21 id=117 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-22 id=118 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-23 id=119 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-24 id=120 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-25 id=121 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-26 id=122 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-27 id=123 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-28 id=124 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nscheduled-29 id=125 state=WAITING\n    -
+        waiting on <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5bba2fd8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nHttpServer-0 id=126 state=TIMED_WAITING\n    -
+        waiting on <0x2931d6a1> (a java.lang.Object)\n    - locked <0x2931d6a1> (a
+        java.lang.Object)\n    at java.lang.Object.wait(Native Method)\n    at org.glassfish.grizzly.utils.DelayedExecutor$DelayedRunnable.run(DelayedExecutor.java:172)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\n    Locked synchronizers: count =
+        1\n      - java.util.concurrent.ThreadPoolExecutor$Worker@207782c2\n\ngrizzly-nio-kernel(1)
+        SelectorRunner id=127 state=RUNNABLE (running in native)\n    at sun.nio.ch.EPollArrayWrapper.epollWait(Native
+        Method)\n    at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)\n    at
+        sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)\n    at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)\n      -
+        locked java.util.Collections$UnmodifiableSet@11207ae\n      - locked sun.nio.ch.EPollSelectorImpl@357795cf\n    at
+        sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)\n    at org.glassfish.grizzly.nio.DefaultSelectorHandler.select(DefaultSelectorHandler.java:115)\n    at
+        org.glassfish.grizzly.nio.SelectorRunner.doSelect(SelectorRunner.java:339)\n    at
+        org.glassfish.grizzly.nio.SelectorRunner.run(SelectorRunner.java:279)\n    at
+        org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:593)\n    at
+        org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:573)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\neventbus-handler-1 id=128 state=WAITING\n    -
+        waiting on <0x1fe0675f> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x1fe0675f> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nelasticsearch[graylog-87e17323-0a19-40d7-8e24-2cbccefdd296][management][T#1]
+        id=129 state=WAITING\n    - waiting on <0x7a49d310> (a org.elasticsearch.common.util.concurrent.EsExecutors$ExecutorScalingQueue)\n    -
+        locked <0x7a49d310> (a org.elasticsearch.common.util.concurrent.EsExecutors$ExecutorScalingQueue)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.LinkedTransferQueue.awaitMatch(LinkedTransferQueue.java:737)\n    at
+        java.util.concurrent.LinkedTransferQueue.xfer(LinkedTransferQueue.java:647)\n    at
+        java.util.concurrent.LinkedTransferQueue.take(LinkedTransferQueue.java:1269)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nrest-worker-0 id=130 state=WAITING\n    -
+        waiting on <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nrest-worker-1 id=131 state=WAITING\n    -
+        waiting on <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nrest-worker-2 id=132 state=WAITING\n    -
+        waiting on <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nrest-worker-3 id=133 state=WAITING\n    -
+        waiting on <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nrest-worker-4 id=134 state=WAITING\n    -
+        waiting on <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nrest-worker-5 id=135 state=WAITING\n    -
+        waiting on <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nrest-worker-6 id=136 state=WAITING\n    -
+        waiting on <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nrest-worker-7 id=137 state=WAITING\n    -
+        waiting on <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nrest-worker-8 id=138 state=WAITING\n    -
+        waiting on <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nrest-worker-9 id=139 state=WAITING\n    -
+        waiting on <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nrest-worker-10 id=140 state=WAITING\n    -
+        waiting on <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nrest-worker-11 id=141 state=WAITING\n    -
+        waiting on <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nrest-worker-12 id=142 state=RUNNABLE\n    at
+        sun.management.ThreadImpl.dumpThreads0(Native Method)\n    at sun.management.ThreadImpl.dumpAllThreads(ThreadImpl.java:454)\n    at
+        com.codahale.metrics.jvm.ThreadDump.dump(ThreadDump.java:30)\n    at org.graylog2.shared.rest.resources.system.SystemResource.threaddump(SystemResource.java:114)\n    at
+        sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n    at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n    at
+        sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n    at
+        java.lang.reflect.Method.invoke(Method.java:498)\n    at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81)\n    at
+        org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:144)\n    at
+        org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161)\n    at
+        org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:205)\n    at
+        org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)\n    at
+        org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)\n    at
+        org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)\n    at
+        org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)\n    at
+        org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)\n    at
+        org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)\n    at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)\n    at
+        org.glassfish.jersey.internal.Errors.process(Errors.java:315)\n    at org.glassfish.jersey.internal.Errors.process(Errors.java:297)\n    at
+        org.glassfish.jersey.internal.Errors.process(Errors.java:267)\n    at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)\n    at
+        org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)\n    at
+        org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)\n    at
+        org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpContainer.service(GrizzlyHttpContainer.java:384)\n    at
+        org.glassfish.grizzly.http.server.HttpHandler$1.run(HttpHandler.java:224)\n    at
+        com.codahale.metrics.InstrumentedExecutorService$InstrumentedRunnable.run(InstrumentedExecutorService.java:176)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\n    Locked synchronizers: count =
+        1\n      - java.util.concurrent.ThreadPoolExecutor$Worker@25be7817\n\nrest-worker-13
+        id=143 state=WAITING\n    - waiting on <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nrest-worker-14 id=144 state=WAITING\n    -
+        waiting on <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nrest-worker-15 id=145 state=WAITING\n    -
+        waiting on <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x64d52bad> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nSessionValidationThread-1 id=146
+        state=TIMED_WAITING\n    - waiting on <0x1ac935bc> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x1ac935bc> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-0 id=147 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-1 id=150 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-2 id=151 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-3 id=152 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-4 id=153 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nelasticsearch[graylog-87e17323-0a19-40d7-8e24-2cbccefdd296][search][T#1]
+        id=154 state=WAITING\n    - waiting on <0x3df47ed1> (a java.util.concurrent.LinkedTransferQueue)\n    -
+        locked <0x3df47ed1> (a java.util.concurrent.LinkedTransferQueue)\n    at sun.misc.Unsafe.park(Native
+        Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.LinkedTransferQueue.awaitMatch(LinkedTransferQueue.java:737)\n    at
+        java.util.concurrent.LinkedTransferQueue.xfer(LinkedTransferQueue.java:647)\n    at
+        java.util.concurrent.LinkedTransferQueue.take(LinkedTransferQueue.java:1269)\n    at
+        org.elasticsearch.common.util.concurrent.SizeBlockingQueue.take(SizeBlockingQueue.java:161)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-5 id=157 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-6 id=160 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-7 id=161 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-8 id=162 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-9 id=163 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-10 id=167 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-11 id=170 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-12 id=171 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-13 id=172 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-14 id=173 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-15 id=174 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-16 id=175 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-17 id=176 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-18 id=177 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-19 id=178 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-20 id=179 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-21 id=180 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-22 id=181 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-23 id=182 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-24 id=183 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-25 id=184 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-26 id=185 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-27 id=186 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-28 id=187 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-29 id=188 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-30 id=189 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nproxied-requests-pool-31 id=190 state=WAITING\n    -
+        waiting on <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x5eb76f61> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nelasticsearch[graylog-87e17323-0a19-40d7-8e24-2cbccefdd296][search][T#2]
+        id=195 state=WAITING\n    - waiting on <0x3df47ed1> (a java.util.concurrent.LinkedTransferQueue)\n    -
+        locked <0x3df47ed1> (a java.util.concurrent.LinkedTransferQueue)\n    at sun.misc.Unsafe.park(Native
+        Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.LinkedTransferQueue.awaitMatch(LinkedTransferQueue.java:737)\n    at
+        java.util.concurrent.LinkedTransferQueue.xfer(LinkedTransferQueue.java:647)\n    at
+        java.util.concurrent.LinkedTransferQueue.take(LinkedTransferQueue.java:1269)\n    at
+        org.elasticsearch.common.util.concurrent.SizeBlockingQueue.take(SizeBlockingQueue.java:161)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\ncluster-eventbus-handler-0 id=197
+        state=WAITING\n    - waiting on <0x005fd7a7> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x005fd7a7> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\ncluster-eventbus-handler-1 id=198
+        state=WAITING\n    - waiting on <0x005fd7a7> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x005fd7a7> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\npool-2-thread-1{Hashed wheel timer
+        #1} id=11 state=TIMED_WAITING\n    at java.lang.Thread.sleep(Native Method)\n    at
+        org.jboss.netty.util.HashedWheelTimer$Worker.waitForNextTick(HashedWheelTimer.java:445)\n    at
+        org.jboss.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:364)\n    at
+        org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nsystemjob-executor-0 id=221 state=WAITING\n    -
+        waiting on <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nsystemjob-executor-1 id=222 state=WAITING\n    -
+        waiting on <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nsystemjob-executor-2 id=223 state=WAITING\n    -
+        waiting on <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nsystemjob-executor-3 id=224 state=WAITING\n    -
+        waiting on <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nsystemjob-executor-4 id=225 state=WAITING\n    -
+        waiting on <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nsystemjob-executor-5 id=226 state=WAITING\n    -
+        waiting on <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nsystemjob-executor-6 id=227 state=WAITING\n    -
+        waiting on <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nsystemjob-executor-7 id=228 state=WAITING\n    -
+        waiting on <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nsystemjob-executor-8 id=229 state=WAITING\n    -
+        waiting on <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nsystemjob-executor-9 id=230 state=WAITING\n    -
+        waiting on <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nsystemjob-executor-10 id=231 state=WAITING\n    -
+        waiting on <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nsystemjob-executor-11 id=232 state=WAITING\n    -
+        waiting on <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nsystemjob-executor-12 id=233 state=WAITING\n    -
+        waiting on <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nsystemjob-executor-13 id=234 state=WAITING\n    -
+        waiting on <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nsystemjob-executor-14 id=235 state=WAITING\n    -
+        waiting on <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    -
+        locked <0x4be1fb70> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)\n    at
+        sun.misc.Unsafe.park(Native Method)\n    at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)\n    at
+        java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)\n    at
+        java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)\n    at
+        java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\nOkHttp ConnectionPool id=236 state=TIMED_WAITING\n    -
+        waiting on <0x481576b8> (a okhttp3.ConnectionPool)\n    - locked <0x481576b8>
+        (a okhttp3.ConnectionPool)\n    at java.lang.Object.wait(Native Method)\n    at
+        java.lang.Object.wait(Object.java:460)\n    at okhttp3.ConnectionPool$1.run(ConnectionPool.java:65)\n    at
+        java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\n    at
+        java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n    at
+        java.lang.Thread.run(Thread.java:748)\n\n    Locked synchronizers: count =
+        1\n      - java.util.concurrent.ThreadPoolExecutor$Worker@77f79852\n\nOkio
+        Watchdog id=237 state=TIMED_WAITING\n    - waiting on <0x5cec2f42> (a java.lang.Class)\n    -
+        locked <0x5cec2f42> (a java.lang.Class)\n    at java.lang.Object.wait(Native
+        Method)\n    at java.lang.Object.wait(Object.java:460)\n    at okio.AsyncTimeout.awaitTimeout(AsyncTimeout.java:360)\n    at
+        okio.AsyncTimeout$Watchdog.run(AsyncTimeout.java:311)\n\n\n"}'
+    http_version: 
+  recorded_at: Sat, 24 Jun 2017 17:07:34 GMT
+recorded_with: VCR 3.0.3
