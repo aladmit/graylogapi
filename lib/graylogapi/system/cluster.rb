@@ -1,5 +1,6 @@
 class GraylogAPI
   class System
+    # class for get system information of a node
     class Cluster
       def initialize(client)
         @client = client
