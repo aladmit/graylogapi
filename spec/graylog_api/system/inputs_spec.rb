@@ -11,7 +11,7 @@ describe GraylogAPI::System::Inputs, vcr: true do
                                    recv_buffer_size: 1_048_576,
                                    tls_client_auth: 'disabled' } }
       req = graylogapi.system.inputs.create(options)
-      graylogapi.system.inputs.delete(req.body['id'])
+      graylogapi.system.inputs.delete(req['id'])
       req
     end
 
@@ -20,7 +20,7 @@ describe GraylogAPI::System::Inputs, vcr: true do
     end
 
     it 'return id' do
-      expect(response.body.keys).to contain_exactly 'id'
+      expect(response.keys).to contain_exactly 'id'
     end
   end
 
@@ -33,8 +33,8 @@ describe GraylogAPI::System::Inputs, vcr: true do
                                    port: 5044 } }
 
       input = graylogapi.system.inputs.create(options)
-      req = graylogapi.system.inputs.update(input.body['id'], options)
-      graylogapi.system.inputs.delete(input.body['id'])
+      req = graylogapi.system.inputs.update(input['id'], options)
+      graylogapi.system.inputs.delete(input['id'])
       req
     end
 
@@ -43,7 +43,7 @@ describe GraylogAPI::System::Inputs, vcr: true do
     end
 
     it 'return id' do
-      expect(response.body.keys).to contain_exactly 'id'
+      expect(response.keys).to contain_exactly 'id'
     end
   end
 
@@ -55,11 +55,11 @@ describe GraylogAPI::System::Inputs, vcr: true do
     end
 
     it 'contain count of inputs' do
-      expect(response.body.keys).to include 'total'
+      expect(response.keys).to include 'total'
     end
 
     it 'contain array of inputs' do
-      expect(response.body.keys).to include 'inputs'
+      expect(response.keys).to include 'inputs'
     end
   end
 
@@ -72,8 +72,8 @@ describe GraylogAPI::System::Inputs, vcr: true do
                                    port: 5044 } }
 
       input = graylogapi.system.inputs.create(options)
-      req = graylogapi.system.inputs.by_id(input.body['id'])
-      graylogapi.system.inputs.delete(input.body['id'])
+      req = graylogapi.system.inputs.by_id(input['id'])
+      graylogapi.system.inputs.delete(input['id'])
       req
     end
 
@@ -82,11 +82,11 @@ describe GraylogAPI::System::Inputs, vcr: true do
     end
 
     it 'contain id' do
-      expect(response.body.keys).to include 'id'
+      expect(response.keys).to include 'id'
     end
 
     it 'contain title' do
-      expect(response.body.keys).to include 'title'
+      expect(response.keys).to include 'title'
     end
   end
 end

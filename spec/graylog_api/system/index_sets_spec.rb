@@ -35,15 +35,15 @@ describe GraylogAPI::System::IndexSets, vcr: true do
     end
 
     it 'have count of index sets' do
-      expect(response.body.keys).to include 'total'
+      expect(response.keys).to include 'total'
     end
 
     it 'have index sets' do
-      expect(response.body.keys).to include 'index_sets'
+      expect(response.keys).to include 'index_sets'
     end
 
     it 'have stats' do
-      expect(response.body.keys).to include 'stats'
+      expect(response.keys).to include 'stats'
     end
   end
 
@@ -55,7 +55,7 @@ describe GraylogAPI::System::IndexSets, vcr: true do
       create_options[:index_prefix] = title
       req = graylogapi.system.index_sets.create(create_options)
       sleep 1
-      graylogapi.system.index_sets.delete(req.body['id'])
+      graylogapi.system.index_sets.delete(req['id'])
       req
     end
 
@@ -64,7 +64,7 @@ describe GraylogAPI::System::IndexSets, vcr: true do
     end
 
     it 'have id' do
-      expect(response.body.keys).to include 'id'
+      expect(response.keys).to include 'id'
     end
   end
 
@@ -75,9 +75,9 @@ describe GraylogAPI::System::IndexSets, vcr: true do
       create_options[:title] = title
       create_options[:index_prefix] = title
       index_set = graylogapi.system.index_sets.create(create_options)
-      req = graylogapi.system.index_sets.by_id(index_set.body['id'])
+      req = graylogapi.system.index_sets.by_id(index_set['id'])
       sleep 1
-      graylogapi.system.index_sets.delete(index_set.body['id'])
+      graylogapi.system.index_sets.delete(index_set['id'])
       req
     end
 
@@ -86,11 +86,11 @@ describe GraylogAPI::System::IndexSets, vcr: true do
     end
 
     it 'have id' do
-      expect(response.body.keys).to include 'id'
+      expect(response.keys).to include 'id'
     end
 
     it 'have title' do
-      expect(response.body.keys).to include 'title'
+      expect(response.keys).to include 'title'
     end
   end
 
@@ -102,7 +102,7 @@ describe GraylogAPI::System::IndexSets, vcr: true do
       create_options[:index_prefix] = title
       index_set = graylogapi.system.index_sets.create(create_options)
       sleep 1
-      graylogapi.system.index_sets.delete(index_set.body['id'])
+      graylogapi.system.index_sets.delete(index_set['id'])
     end
 
     it 'code 204' do

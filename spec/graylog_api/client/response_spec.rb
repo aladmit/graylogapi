@@ -12,11 +12,11 @@ describe GraylogAPI::Client::Response, vcr: true do
   end
 
   it 'get field like a hash' do
-    expect(response['cluster_id']).to eq response.body['cluster_id']
+    expect(response['cluster_id']).to eq response['cluster_id']
   end
 
   it 'have fields from body' do
-    expect(response.keys).to eq response.body.keys
+    expect(response.keys).to eq response.keys
   end
 
   it 'check success' do
