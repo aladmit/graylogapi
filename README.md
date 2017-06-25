@@ -62,6 +62,7 @@ For example, you can find *Inputs* in *System/Inputs* in the UI and you can find
   * all — Get a list of all index sets.
   * create(params) — Create index set.
   * by_id(id) — Get index set by id.
+  * delete(id) — Delete index set.
 * **System/Inputs**: Message inputs
   * all — Get all inputs.
   * by_id(id, params) — Get information of a single input on this node.

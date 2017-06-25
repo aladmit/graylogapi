@@ -23,20 +23,53 @@ http_interactions:
       message: Created
     headers:
       Location:
-      - http://10.211.55.25:9000/api/system/inputs/5948d37b0b5712166af27a56
+      - http://10.211.55.29:9000/api/system/inputs/594e75af76f94e04cbd3f636
       X-Graylog-Node-Id:
-      - edfa28fa-d2f7-4700-b564-118ea7605850
+      - 87e17323-0a19-40d7-8e24-2cbccefdd296
       X-Runtime-Microseconds:
-      - '2255'
+      - '13016'
       Content-Type:
       - application/json
       Date:
-      - Tue, 20 Jun 2017 07:49:15 GMT
+      - Sat, 24 Jun 2017 14:22:38 GMT
       Content-Length:
       - '33'
     body:
       encoding: UTF-8
-      string: '{"id":"5948d37b0b5712166af27a56"}'
+      string: '{"id":"594e75af76f94e04cbd3f636"}'
     http_version: 
-  recorded_at: Tue, 20 Jun 2017 07:49:15 GMT
+  recorded_at: Sat, 24 Jun 2017 14:22:39 GMT
+- request:
+    method: delete
+    uri: http://localhost:9000/api/system/inputs/594e75af76f94e04cbd3f636
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW46YWRtaW4=
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      X-Graylog-Node-Id:
+      - 87e17323-0a19-40d7-8e24-2cbccefdd296
+      X-Runtime-Microseconds:
+      - '1669'
+      Date:
+      - Sat, 24 Jun 2017 14:22:38 GMT
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sat, 24 Jun 2017 14:22:39 GMT
 recorded_with: VCR 3.0.3
