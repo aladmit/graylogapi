@@ -11,7 +11,7 @@ describe GraylogAPI::System, vcr: true do
     end
 
     it 'contain node_id' do
-      expect(response.body.keys).to include 'node_id'
+      expect(response.keys).to include 'node_id'
     end
   end
 
@@ -25,11 +25,11 @@ describe GraylogAPI::System, vcr: true do
     end
 
     it 'contain node_id' do
-      expect(response.body.keys).to include 'node_id'
+      expect(response.keys).to include 'node_id'
     end
 
     it 'contain used_memory' do
-      expect(response.body.keys).to include 'used_memory'
+      expect(response.keys).to include 'used_memory'
     end
   end
 
@@ -43,7 +43,7 @@ describe GraylogAPI::System, vcr: true do
     end
 
     it 'contain thread dump' do
-      expect(response.body.keys).to include 'threaddump'
+      expect(response.keys).to include 'threaddump'
     end
   end
 end

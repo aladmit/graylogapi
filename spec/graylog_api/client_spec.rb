@@ -9,7 +9,7 @@ describe GraylogAPI::Client, vcr: true do
     end
 
     let(:dashboard_id) do
-      client.json_request(:get, '/dashboards').body['dashboards']
+      client.json_request(:get, '/dashboards')['dashboards']
             .select { |e| e['title'] = 'Test_Dashboard' }
             .first['id']
     end
@@ -18,7 +18,7 @@ describe GraylogAPI::Client, vcr: true do
       dash = client.json_request(:post, '/dashboards',
                                  title: 'Post Dashboard',
                                  description: 'post dashboard')
-      expect(dash.body.keys).to include 'dashboard_id'
+      expect(dash.keys).to include 'dashboard_id'
     end
 
     it 'get' do

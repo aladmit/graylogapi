@@ -19,6 +19,10 @@ class GraylogAPI
         body[key]
       end
 
+      def keys
+        body.keys
+      end
+
       def success?
         (200..299).cover? code
       end
