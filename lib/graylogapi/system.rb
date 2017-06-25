@@ -1,5 +1,6 @@
-require 'graylogapi/system/inputs'
+require 'graylogapi/system/cluster'
 require 'graylogapi/system/index_sets'
+require 'graylogapi/system/inputs'
 
 class GraylogAPI
   # class for manage system
@@ -29,6 +30,10 @@ class GraylogAPI
 
     def index_sets
       @index_sets ||= IndexSets.new(@client)
+    end
+
+    def cluster
+      @cluster ||= Cluster.new(@client)
     end
   end
 end
