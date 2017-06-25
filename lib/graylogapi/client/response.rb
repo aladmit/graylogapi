@@ -15,6 +15,14 @@ class GraylogAPI
         self.code = http_response.code.to_i
       end
 
+      def [](key)
+        body[key]
+      end
+
+      def success?
+        (200..299).cover? code
+      end
+
       private
 
       def parse_body(body)
