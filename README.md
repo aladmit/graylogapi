@@ -40,6 +40,12 @@ For example, you can find *Inputs* in *System/Inputs* in the UI and you can find
   * recent(params) — Get the most recent alarms of all streams.
   * paginated(params) — Get alarms of all streams, filtered by specifying limit and offset parameters.
   * by_id(id, params) — Get an alert by ID.
+* **Dashboards**: Manage dashboards
+  * create(params) — Create a dashboard.
+  * all — Get a list of all dashboards and all configurations of their widgets.
+  * by_id(id) — Get a single dashboards and all configurations of its widgets.
+  * update(id, params) — Update the settings of a dashboard.
+  * delete(id) — Delete a dashboard and all its widgets.
 * **Streams**: Manage streams
   * all — Get a list of all streams.
   * create(params) — Create a stream.
