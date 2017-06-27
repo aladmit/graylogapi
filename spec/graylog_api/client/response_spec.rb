@@ -22,4 +22,8 @@ describe GraylogAPI::Client::Response, vcr: true do
   it 'check success' do
     expect(response.success?).to eq true
   end
+
+  it 'check fail' do
+    expect(response.fail?).to eq false
+  end
 end
