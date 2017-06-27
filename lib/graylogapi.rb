@@ -4,6 +4,7 @@ $LOAD_PATH.unshift(libdir) unless $LOAD_PATH.include?(libdir)
 require 'graylogapi/version'
 require 'graylogapi/alerts'
 require 'graylogapi/client'
+require 'graylogapi/dashboards'
 require 'graylogapi/streams'
 require 'graylogapi/system'
 
@@ -33,5 +34,10 @@ class GraylogAPI
   # @return [GraylogAPI::Streams]
   def streams
     @streams ||= Streams.new(@client)
+  end
+
+  # @return [GraylogAPI::Dashboards]
+  def dashboards
+    @dashboards ||= Dashboards.new(@client)
   end
 end

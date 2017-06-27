@@ -48,7 +48,11 @@ describe GraylogAPI::Dashboards, vcr: true do
     end
 
     it 'have id' do
-      expect(response['id']).to eq dash['dashboard_id']
+      expect(response.keys).to include 'id'
+    end
+
+    it 'have title' do
+      expect(response.keys).to include 'title'
     end
   end
 
