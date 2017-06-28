@@ -5,6 +5,7 @@ require 'graylogapi/version'
 require 'graylogapi/alerts'
 require 'graylogapi/client'
 require 'graylogapi/dashboards'
+require 'graylogapi/static_fields'
 require 'graylogapi/streams'
 require 'graylogapi/system'
 
@@ -39,5 +40,10 @@ class GraylogAPI
   # @return [GraylogAPI::Dashboards]
   def dashboards
     @dashboards ||= Dashboards.new(@client)
+  end
+
+  # @return [GraylogAPI::StaticFields]
+  def static_fields
+    @static_fields ||= StaticFields.new(@client)
   end
 end

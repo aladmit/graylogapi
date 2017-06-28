@@ -46,6 +46,9 @@ For example, you can find *Inputs* in *System/Inputs* in the UI and you can find
   * by_id(id) — Get a single dashboards and all configurations of its widgets.
   * update(id, params) — Update the settings of a dashboard.
   * delete(id) — Delete a dashboard and all its widgets.
+* **StaticFields**: Static fields of an input.
+  * create(input_id, params) — Add a static field to an input.
+  * delete(input_id, key) — Remove static field of an input.
 * **Streams**: Manage streams
   * all — Get a list of all streams.
   * create(params) — Create a stream.

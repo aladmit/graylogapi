@@ -1,0 +1,145 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:9000/api/system/inputs
+    body:
+      encoding: UTF-8
+      string: '{"title":"static_fields_input","type":"org.graylog.plugins.beats.BeatsInput","global":true,"configuration":{"bind_address":"0.0.0.0","port":5044,"recv_buffer_size":1048576,"tls_client_auth":"disabled"}}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW46YWRtaW4=
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Location:
+      - http://10.211.55.29:9000/api/system/inputs/5953833e76f94e04cbd4e933
+      X-Graylog-Node-Id:
+      - 87e17323-0a19-40d7-8e24-2cbccefdd296
+      X-Runtime-Microseconds:
+      - '2508'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 28 Jun 2017 10:21:50 GMT
+      Content-Length:
+      - '33'
+    body:
+      encoding: UTF-8
+      string: '{"id":"5953833e76f94e04cbd4e933"}'
+    http_version: 
+  recorded_at: Wed, 28 Jun 2017 10:21:50 GMT
+- request:
+    method: post
+    uri: http://localhost:9000/api/system/inputs/5953833e76f94e04cbd4e933/staticfields
+    body:
+      encoding: UTF-8
+      string: '{"key":"static_key","value":"value"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW46YWRtaW4=
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Location:
+      - http://10.211.55.29:9000/api/system/inputs/5953833e76f94e04cbd4e933
+      X-Graylog-Node-Id:
+      - 87e17323-0a19-40d7-8e24-2cbccefdd296
+      X-Runtime-Microseconds:
+      - '5161'
+      Date:
+      - Wed, 28 Jun 2017 10:21:50 GMT
+      Content-Length:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Wed, 28 Jun 2017 10:21:50 GMT
+- request:
+    method: delete
+    uri: http://localhost:9000/api/system/inputs/5953833e76f94e04cbd4e933/staticfields/static_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW46YWRtaW4=
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      X-Graylog-Node-Id:
+      - 87e17323-0a19-40d7-8e24-2cbccefdd296
+      X-Runtime-Microseconds:
+      - '2646'
+      Date:
+      - Wed, 28 Jun 2017 10:21:50 GMT
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Wed, 28 Jun 2017 10:21:50 GMT
+- request:
+    method: delete
+    uri: http://localhost:9000/api/system/inputs/5953833e76f94e04cbd4e933
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW46YWRtaW4=
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      X-Graylog-Node-Id:
+      - 87e17323-0a19-40d7-8e24-2cbccefdd296
+      X-Runtime-Microseconds:
+      - '1339'
+      Date:
+      - Wed, 28 Jun 2017 10:21:50 GMT
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Wed, 28 Jun 2017 10:21:50 GMT
+recorded_with: VCR 3.0.3
