@@ -21,6 +21,14 @@ class GraylogAPI
       def delete(id)
         @client.json_request(:delete, "/system/indices/index_sets/#{id}")
       end
+
+      def make_default(id)
+        @client.json_request(:put, "/system/indices/index_sets/#{id}/default")
+      end
+
+      def update(id, params)
+        @client.json_request(:put, "/system/indices/index_sets/#{id}", params)
+      end
     end
   end
 end
