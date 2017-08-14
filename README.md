@@ -70,6 +70,8 @@ For example, you can find *Inputs* in *System/Inputs* in the UI and you can find
 * **System/IndexSets**: Index sets
   * all — Get a list of all index sets.
   * create(params) — Create index set.
+  * update(params) — Update index set.
+  * make_default(id) — Set default index set.
   * by_id(id) — Get index set by id.
   * delete(id) — Delete index set.
 * **System/Inputs**: Message inputs

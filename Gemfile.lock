@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    graylogapi (1.0.0)
+    graylogapi (1.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -350,4 +350,4 @@ DEPENDENCIES
   yard
 
 BUNDLED WITH
-   1.12.5
+   1.15.1
