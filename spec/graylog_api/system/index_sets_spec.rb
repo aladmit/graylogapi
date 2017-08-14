@@ -93,7 +93,7 @@ describe GraylogAPI::System::IndexSets, vcr: true do
       expect(response.keys).to include 'title'
     end
   end
-  
+
   context 'update index set' do
     subject(:response) do
       create_options = options.dup
@@ -114,16 +114,16 @@ describe GraylogAPI::System::IndexSets, vcr: true do
     it 'code 200' do
       expect(response.code).to eq 200
     end
-    
+
     it 'title changed' do
-      expect(response['title']).to eq 'Updated title' 
+      expect(response['title']).to eq 'Updated title'
     end
 
     it 'max number of indices changed' do
       expect(response['retention_strategy']['max_number_of_indices']).to eq 10
     end
   end
-    
+
   context 'set default index set' do
     subject(:response) do
       create_options = options.dup
