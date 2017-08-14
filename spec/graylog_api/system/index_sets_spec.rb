@@ -94,6 +94,61 @@ describe GraylogAPI::System::IndexSets, vcr: true do
     end
   end
 
+  context 'update index set' do
+    subject(:response) do
+      create_options = options.dup
+      update_options = options.dup
+      title = generate_string
+      create_options[:title] = title
+      create_options[:index_prefix] = title
+      index_set = graylogapi.system.index_sets.create(create_options)
+      update_options[:retention_strategy][:max_number_of_indices] = 10
+      update_options[:title] = 'Updated title'
+      sleep 1
+      req = graylogapi.system.index_sets.update(index_set['id'], update_options)
+      sleep 1
+      graylogapi.system.index_sets.delete(index_set['id'])
+      req
+    end
+
+    it 'code 200' do
+      expect(response.code).to eq 200
+    end
+
+    it 'title changed' do
+      expect(response['title']).to eq 'Updated title'
+    end
+
+    it 'max number of indices changed' do
+      expect(response['retention_strategy']['max_number_of_indices']).to eq 10
+    end
+  end
+
+  context 'set default index set' do
+    subject(:response) do
+      create_options = options.dup
+      title = generate_string
+      create_options[:title] = title
+      create_options[:index_prefix] = title
+      index_set = graylogapi.system.index_sets.create(create_options)
+      req = graylogapi.system.index_sets.make_default(index_set['id'])
+      sleep 1
+      index_sets = graylogapi.system.index_sets.all
+      graylogapi.system.index_sets.make_default(index_sets['index_sets'].first['id'])
+      sleep 1
+      graylogapi.system.index_sets.delete(index_set['id'])
+      req
+    end
+
+    it 'code 200' do
+      expect(response.code).to eq 200
+    end
+
+    it 'is default' do
+      expect(response['default']).to eq true
+    end
+  end
+
   context 'delete index set' do
     subject(:response) do
       create_options = options.dup
