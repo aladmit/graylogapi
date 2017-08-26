@@ -10,14 +10,14 @@ class GraylogAPI
     # @param params [Hash]
     # @return [GraylogAPI::Client::Response]
     def create(params)
-      @client.json_request(:post, '/dashboards', params)
+      @client.request(:post, '/dashboards', params)
     end
 
     # get list of all dashboards
     #
     # @return [GraylogAPI::Client::Response]
     def all
-      @client.json_request(:get, '/dashboards')
+      @client.request(:get, '/dashboards')
     end
 
     # get dashboard by id
@@ -25,7 +25,7 @@ class GraylogAPI
     # @param id [Integer] id of a dashboard
     # @return [GraylogAPI::Client::Response]
     def by_id(id)
-      @client.json_request(:get, "/dashboards/#{id}")
+      @client.request(:get, "/dashboards/#{id}")
     end
 
     # update dashboard
@@ -34,7 +34,7 @@ class GraylogAPI
     # @param params [Hash]
     # @return [GraylogAPI::Client::Response]
     def update(id, params)
-      @client.json_request(:put, "/dashboards/#{id}", params)
+      @client.request(:put, "/dashboards/#{id}", params)
     end
 
     # delete dashboard
@@ -42,7 +42,7 @@ class GraylogAPI
     # @param id [Integer] id of a dashboard
     # @return [GraylogAPI::Client::Response]
     def delete(id)
-      @client.json_request(:delete, "/dashboards/#{id}")
+      @client.request(:delete, "/dashboards/#{id}")
     end
   end
 end

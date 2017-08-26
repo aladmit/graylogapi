@@ -7,27 +7,27 @@ class GraylogAPI
       end
 
       def all
-        @client.json_request(:get, '/system/indices/index_sets')
+        @client.request(:get, '/system/indices/index_sets')
       end
 
       def create(params)
-        @client.json_request(:post, '/system/indices/index_sets', params)
+        @client.request(:post, '/system/indices/index_sets', params)
       end
 
       def by_id(id)
-        @client.json_request(:get, "/system/indices/index_sets/#{id}")
+        @client.request(:get, "/system/indices/index_sets/#{id}")
       end
 
       def delete(id)
-        @client.json_request(:delete, "/system/indices/index_sets/#{id}")
+        @client.request(:delete, "/system/indices/index_sets/#{id}")
       end
 
       def make_default(id)
-        @client.json_request(:put, "/system/indices/index_sets/#{id}/default")
+        @client.request(:put, "/system/indices/index_sets/#{id}/default")
       end
 
       def update(id, params)
-        @client.json_request(:put, "/system/indices/index_sets/#{id}", params)
+        @client.request(:put, "/system/indices/index_sets/#{id}", params)
       end
     end
   end

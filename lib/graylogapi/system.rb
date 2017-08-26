@@ -10,15 +10,15 @@ class GraylogAPI
     end
 
     def overview
-      @client.json_request(:get, '/system')
+      @client.request(:get, '/system')
     end
 
     def jvm
-      @client.json_request(:get, '/system/jvm')
+      @client.request(:get, '/system/jvm')
     end
 
     def thread_dump
-      @client.json_request(:get, '/system/threaddump')
+      @client.request(:get, '/system/threaddump')
     end
 
     # object for manage System/Inputs

@@ -1,7 +1,7 @@
 describe GraylogAPI::Client::Response, vcr: true do
   include_context 'graylogapi'
 
-  subject(:response) { graylogapi.client.json_request(:get, '/') }
+  subject(:response) { graylogapi.client.request(:get, '/') }
 
   it 'have code' do
     expect(response.code.class).to eq Fixnum
