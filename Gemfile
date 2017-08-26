@@ -12,6 +12,8 @@ group :development do
   gem 'rb-readline'
   gem 'test-kitchen'
   gem 'yard'
+  gem 'guard'
+  gem 'guard-rspec', require: false
 end
 
 group :test do
