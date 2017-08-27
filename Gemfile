@@ -5,6 +5,8 @@ gemspec
 
 group :development do
   gem 'berkshelf'
+  gem 'guard'
+  gem 'guard-rspec', require: false
   gem 'inspec'
   gem 'kitchen-inspec'
   gem 'kitchen-vagrant'

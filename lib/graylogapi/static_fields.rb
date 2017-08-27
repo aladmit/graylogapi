@@ -11,7 +11,7 @@ class GraylogAPI
     # @param params [Hash] hash with key and value of new static field
     # @return [GraylogAPI::Client::Response]
     def create(input_id, params)
-      @client.json_request(:post, "/system/inputs/#{input_id}/staticfields", params)
+      @client.request(:post, "/system/inputs/#{input_id}/staticfields", params)
     end
 
     # delete key of an input
@@ -20,7 +20,7 @@ class GraylogAPI
     # @param key [String] key of static field
     # @return [GraylogAPI::Client::Response]
     def delete(input_id, key)
-      @client.json_request(:delete, "/system/inputs/#{input_id}/staticfields/#{key}")
+      @client.request(:delete, "/system/inputs/#{input_id}/staticfields/#{key}")
     end
   end
 end

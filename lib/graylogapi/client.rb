@@ -30,21 +30,19 @@ class GraylogAPI
     # @param method [Symbol] can be :get, :post, :delete, :put
     # @param path [String] url
     # @param params [Hash] request params
-    # @return Struct
-    def json_request(method, path, params = {})
-      request = request(method, path, params)
+    # @return [GraylogAPI::Client::Response]
+    def request(method, path, params = {})
+      request = make_request(method, path, params)
       request.basic_auth(options[:user], options[:pass])
       request.add_field('Content-Type', 'application/json')
       response = @http.request(request)
 
       Response.new(response)
-    rescue
-      response
     end
 
     private
 
-    def request(method, path, params = {})
+    def make_request(method, path, params = {})
       case method
       when :get, :delete
         full_path = [options[:base_url] + path, URI.encode_www_form(params)]

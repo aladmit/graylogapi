@@ -18,7 +18,7 @@ verifier:
   name: inspec
 
 platforms:
-  - name: centos-7.2
+  - name: centos-7.3
 
 suites:
   - name: graylog2
