@@ -59,9 +59,7 @@ class GraylogAPI
       #
       # @return [Hash]
       def parse(params)
-        if params.has_key? :type_name
-          params = type_name_to_type(params)
-        end
+        params = type_name_to_type(params) if params.key? :type_name
 
         params
       end

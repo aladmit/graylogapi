@@ -1,6 +1,7 @@
 class GraylogAPI
   class System
     class Inputs
+      # class for getting info about input types
       class Types
         def initialize(client)
           @client = client
@@ -31,7 +32,7 @@ class GraylogAPI
         #
         # @return [String]
         def name_to_type(name)
-          all.body.find { |_, type| type['name'].downcase == name.downcase }.first
+          all.body.find { |_, type| type['name'].casecmp(name).zero? }.first
         end
       end
     end
