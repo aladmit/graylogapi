@@ -37,11 +37,7 @@ class GraylogAPI
         if body.nil? || body.empty?
           {}
         else
-          begin
-            JSON.parse(body)
-          rescue
-            body
-          end
+          JSON.parse(body)
         end
       end
     end

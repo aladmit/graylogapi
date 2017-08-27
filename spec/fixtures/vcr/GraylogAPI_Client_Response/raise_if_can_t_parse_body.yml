@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:9000/api/incorrect_page
+    uri: http://localhost:9000/api/inc_page
     body:
       encoding: US-ASCII
       string: ''
@@ -23,13 +23,13 @@ http_interactions:
       message: OK
     headers:
       X-Graylog-Node-Id:
-      - edfa28fa-d2f7-4700-b564-118ea7605850
+      - ad9b9139-c1eb-4eca-8e14-5c2fdf2ddfd7
       X-Ua-Compatible:
       - IE=edge
       Content-Type:
       - text/html
       Date:
-      - Tue, 20 Jun 2017 07:49:15 GMT
+      - Sun, 27 Aug 2017 11:21:52 GMT
       Content-Length:
       - '1290'
     body:
@@ -47,5 +47,5 @@ http_interactions:
         \   \n    <script src=\"/assets/app.35e28e4da7743596569a.js\"></script>\n
         \   \n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Tue, 20 Jun 2017 07:49:15 GMT
+  recorded_at: Sun, 27 Aug 2017 11:21:52 GMT
 recorded_with: VCR 3.0.3

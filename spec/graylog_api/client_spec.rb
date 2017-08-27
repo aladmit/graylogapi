@@ -35,21 +35,10 @@ describe GraylogAPI::Client, vcr: true do
       request = client.request(:delete, "/dashboards/#{dashboard_id}")
       expect(request.code).to eq 204
     end
-  end
 
-  context 'request' do
-    it 'struct have code' do
-      request = client.request(:get, '/incorrect_page')
-      expect(request.code.class).to eq Fixnum
-    end
-
-    it 'struct have body' do
-      expect(client.request(:get, '/').body.class).to eq Hash
-    end
-
-    it 'return string if can`t parse body' do
-      request = client.request(:get, '/incorrect_page')
-      expect(request.body.class).to eq String
+    it' return request' do
+      request = client.request(:get, '/')
+      expect(request.class).to eq GraylogAPI::Client::Response
     end
   end
 end

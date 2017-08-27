@@ -38,8 +38,6 @@ class GraylogAPI
       response = @http.request(request)
 
       Response.new(response)
-    rescue
-      response
     end
 
     private
