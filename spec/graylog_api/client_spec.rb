@@ -5,7 +5,7 @@ describe GraylogAPI::Client, vcr: true do
   context 'success requests' do
     let(:dashboard) do
       client.request(:post, '/dashboards', title: 'Test_Dashboard',
-                                                description: 'Test_Dashboard')
+                                           description: 'Test_Dashboard')
     end
 
     let(:dashboard_id) do
@@ -15,9 +15,8 @@ describe GraylogAPI::Client, vcr: true do
     end
 
     it 'post' do
-      dash = client.request(:post, '/dashboards',
-                                 title: 'Post Dashboard',
-                                 description: 'post dashboard')
+      dash = client.request(:post, '/dashboards', title: 'Post Dashboard',
+                                                  description: 'post dashboard')
       expect(dash.keys).to include 'dashboard_id'
     end
 
@@ -27,7 +26,7 @@ describe GraylogAPI::Client, vcr: true do
 
     it 'put' do
       req = client.request(:put, "/dashboards/#{dashboard_id}",
-                                title: 'Edited_Dashboard')
+                           title: 'Edited_Dashboard')
       expect(req.code).to eq 204
     end
 

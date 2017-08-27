@@ -5,6 +5,8 @@ gemspec
 
 group :development do
   gem 'berkshelf'
+  gem 'guard'
+  gem 'guard-rspec', require: false
   gem 'inspec'
   gem 'kitchen-inspec'
   gem 'kitchen-vagrant'
@@ -12,8 +14,6 @@ group :development do
   gem 'rb-readline'
   gem 'test-kitchen'
   gem 'yard'
-  gem 'guard'
-  gem 'guard-rspec', require: false
 end
 
 group :test do
