@@ -27,7 +27,7 @@ class GraylogAPI
       # @param params [Hash]
       # @return [GraylogAPI::Client::Response]
       def create(params = {})
-        @client.request(:post, '/system/inputs', params)
+        @client.request(:post, '/system/inputs', parse(params))
       end
 
       # update input
@@ -35,15 +35,15 @@ class GraylogAPI
       # @param params [Hash]
       # @return [GraylogAPI::Client::Response]
       def update(id, params = {})
-        @client.request(:put, "/system/inputs/#{id}", params)
+        @client.request(:put, "/system/inputs/#{id}", parse(params))
       end
 
       # delete input
       #
       # @param params [Hash]
       # @return [GraylogAPI::Client::Response]
-      def delete(id, params = {})
-        @client.request(:delete, "/system/inputs/#{id}", params)
+      def delete(id)
+        @client.request(:delete, "/system/inputs/#{id}")
       end
 
       # object for get information about input types
@@ -51,6 +51,29 @@ class GraylogAPI
       # @return [GraylogAPI::System::Inputs::Types]
       def types
         @types ||= Types.new(@client)
+      end
+
+      private
+
+      # parase params
+      #
+      # @return [Hash]
+      def parse(params)
+        if params.has_key? :type_name
+          params = type_name_to_type(params)
+        end
+
+        params
+      end
+
+      # convert type name to type
+      #
+      # @return [Hash]
+      def type_name_to_type(params)
+        type = types.name_to_type(params[:type_name])
+        params[:type] = type
+        params.delete(:type_name)
+        params
       end
     end
   end

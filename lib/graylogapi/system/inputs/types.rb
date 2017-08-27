@@ -26,6 +26,13 @@ class GraylogAPI
         def by_type(type)
           @client.request(:get, "/system/inputs/types/#{type}")
         end
+
+        # convert type name to type
+        #
+        # @return [String]
+        def name_to_type(name)
+          all.body.find { |_, type| type['name'].downcase == name.downcase }.first
+        end
       end
     end
   end
