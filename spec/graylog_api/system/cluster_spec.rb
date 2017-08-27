@@ -1,4 +1,3 @@
-require 'pry'
 describe GraylogAPI::System::Cluster, vcr: true do
   include_context 'graylogapi'
 

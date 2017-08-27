@@ -1,3 +1,5 @@
+require 'graylogapi/system/inputs/types'
+
 class GraylogAPI
   class System
     # class for manage inputs
@@ -42,6 +44,13 @@ class GraylogAPI
       # @return [GraylogAPI::Client::Response]
       def delete(id, params = {})
         @client.request(:delete, "/system/inputs/#{id}", params)
+      end
+
+      # object for get information about input types
+      #
+      # @return [GraylogAPI::System::Inputs::Types]
+      def types
+        @types ||= Types.new(@client)
       end
     end
   end
