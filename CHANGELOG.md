@@ -5,11 +5,23 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## Unreleased
 
+## [1.2.0]
+
+### Added
+
+- Get info about input types
+- Use name of type then create an input
+
+### Changed
+
+- Rename Client.json_request to Client.request
+
 ## Released
 
 ## [1.1.0] - 2017-08-14
 
 ### Added
+
 - Manage dashboards
 - Manage static fields of inputs
 - Update and make default methods for System/IndexSets

@@ -31,7 +31,7 @@ For example, you can find *Inputs* in *System/Inputs* in the UI and you can find
 
 ### get Input by id
 
-    graylogapi = Graylog.new('http://localhost:9000/api', 'username', 'password')
+    graylogapi = Graylog.new(base_url: 'http://localhost:9000/api', user: 'username', pass: 'password')
     graylogapi.system.inputs.by_id('5947d3840b5712166af25009')
 
 ## Supported methods
@@ -80,6 +80,12 @@ For example, you can find *Inputs* in *System/Inputs* in the UI and you can find
   * create(params) — Launch input on this node.
   * update(params) — Update input on this node.
   * delete(id) — Terminate input on this node.
+* **System/Inputs/Types**: Message input types of this node.
+  * node — Get all available input types of this node.
+  * all — Get informatino about all input types.
+  * by_type(type) — Get information about a single input type.
+  * name_to_type(name) — Convert name of type to type.
+
 
 ## Copyright
 

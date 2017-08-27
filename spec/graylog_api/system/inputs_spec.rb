@@ -24,6 +24,27 @@ describe GraylogAPI::System::Inputs, vcr: true do
     end
   end
 
+  context 'create input with type name insted of type' do
+    subject(:response) do
+      options = { title: 'Test_create_input',
+                  type_name: 'Syslog UDP',
+                  global: true,
+                  configuration: { bind_address: '0.0.0.0',
+                                   port: 5014 } }
+      res = graylogapi.system.inputs.create(options)
+      graylogapi.system.inputs.delete(res['id'])
+      res
+    end
+
+    it 'code 201' do
+      expect(response.code).to eq 201
+    end
+
+    it 'return id' do
+      expect(response.keys).to contain_exactly 'id'
+    end
+  end
+
   context 'update input' do
     subject(:response) do
       options = { title: 'Input by gem123',
@@ -36,6 +57,28 @@ describe GraylogAPI::System::Inputs, vcr: true do
       req = graylogapi.system.inputs.update(input['id'], options)
       graylogapi.system.inputs.delete(input['id'])
       req
+    end
+
+    it 'code 201' do
+      expect(response.code).to eq 201
+    end
+
+    it 'return id' do
+      expect(response.keys).to contain_exactly 'id'
+    end
+  end
+
+  context 'update input with type name instead of type' do
+    subject(:response) do
+      options = { title: 'Update_input',
+                  type_name: 'Beats',
+                  global: true,
+                  configuration: { bind_address: '0.0.0.0',
+                                   port: 5044 } }
+      input = graylogapi.system.inputs.create(options)
+      res = graylogapi.system.inputs.update(input['id'], options)
+      graylogapi.system.inputs.delete(input['id'])
+      res
     end
 
     it 'code 201' do
