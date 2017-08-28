@@ -1,5 +1,6 @@
 env:
   DOCKER_COMPOSE_VERSION: 1.14.0
+  VCR: all
 
 dist: trusty
 language: ruby
@@ -33,3 +34,4 @@ matrix:
         - curl http://localhost:9000/
         - bundle exec rubocop
         - bundle exec rspec
+        - git status
