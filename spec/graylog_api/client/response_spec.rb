@@ -20,6 +20,8 @@ describe GraylogAPI::Client::Response, vcr: true do
   end
 
   it 'check success' do
+    puts response.code
+    puts response.body
     expect(response.success?).to eq true
   end
 
