@@ -1,13 +1,31 @@
+env:
+  DOCKER_COMPOSE_VERSION: 1.14.0
+  VCR: all
+
+dist: trusty
+language: ruby
+sudo: required 
+services:
+  - docker
+
 branches:
   only:
     - master
 
-language: ruby
 cache: bundler
 before_install:
+  - sudo apt-get update
+  - sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+  - docker ps -a
+  - docker-compose up -d
   - gem update --system
   - gem update bundler
   - gem --version
+  - sleep 120
+
 matrix:
   include:
     - rvm: 2.4.1
