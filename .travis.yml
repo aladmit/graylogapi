@@ -1,12 +1,12 @@
 env:
   DOCKER_COMPOSE_VERSION: 1.14.0
 
+dist: trusty
+language: ruby
 sudo: required
 
 services:
   - docker
-
-language: ruby
 
 branches:
   only:
