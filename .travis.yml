@@ -33,5 +33,4 @@ matrix:
         - sleep 60
         - curl http://localhost:9000/
         - bundle exec rubocop
-        - bundle exec rspec
-        - git status
+        - bundle exec rspec spec/graylog_api/client/
