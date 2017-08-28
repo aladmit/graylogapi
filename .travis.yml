@@ -24,11 +24,11 @@ before_install:
   - gem update --system
   - gem update bundler
   - gem --version
+  - sleep 120
 
 matrix:
   include:
     - rvm: 2.4.1
       script:
-        - sleep 120
         - bundle exec rubocop
-        - bundle exec rspec spec/graylog_api/client/
+        - bundle exec rspec
