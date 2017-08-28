@@ -29,6 +29,7 @@ matrix:
   include:
     - rvm: 2.4.1
       script:
+        - sleep 60
         - curl http://localhost:9000/
         - bundle exec rubocop
         - bundle exec rspec
