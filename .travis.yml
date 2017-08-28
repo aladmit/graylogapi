@@ -4,8 +4,7 @@ env:
 
 dist: trusty
 language: ruby
-sudo: required
-
+sudo: required 
 services:
   - docker
 
@@ -30,7 +29,6 @@ matrix:
   include:
     - rvm: 2.4.1
       script:
-        - sleep 60
-        - curl http://localhost:9000/api
+        - sleep 120
         - bundle exec rubocop
         - bundle exec rspec spec/graylog_api/client/
