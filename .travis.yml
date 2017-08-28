@@ -31,6 +31,6 @@ matrix:
     - rvm: 2.4.1
       script:
         - sleep 60
-        - curl http://localhost:9000/
+        - curl http://localhost:9000/api
         - bundle exec rubocop
         - bundle exec rspec spec/graylog_api/client/
