@@ -69,6 +69,7 @@ For example, you can find *Inputs* in *System/Inputs* in the UI and you can find
   * node_by_id — Infromation about a node.
 * **System/IndexSets**: Index sets
   * all — Get a list of all index sets.
+  * default — Get default index set.
   * create(params) — Create index set.
   * update(params) — Update index set.
   * make_default(id) — Set default index set.
