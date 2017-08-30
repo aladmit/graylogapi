@@ -10,6 +10,10 @@ class GraylogAPI
         @client.request(:get, '/system/indices/index_sets')
       end
 
+      def default
+        all['index_sets'].find { |i| i['default'] == true }
+      end
+
       def create(params)
         @client.request(:post, '/system/indices/index_sets', params)
       end

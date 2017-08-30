@@ -47,6 +47,16 @@ describe GraylogAPI::System::IndexSets, vcr: true do
     end
   end
 
+  context 'get default index set' do
+    subject(:response) do
+      graylogapi.system.index_sets.default
+    end
+
+    it 'it`s default' do
+      expect(response['default']).to eq true
+    end
+  end
+
   context 'create index set' do
     subject(:response) do
       create_options = options.dup
