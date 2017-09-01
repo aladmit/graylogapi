@@ -71,6 +71,7 @@ You can find more examples [here](./examples/)
   * node_by_id — Infromation about a node.
 * **System/IndexSets**: Index sets
   * all — Get a list of all index sets.
+  * default — Get default index set.
   * create(params) — Create index set.
   * update(params) — Update index set.
   * make_default(id) — Set default index set.
