@@ -29,6 +29,8 @@ Ruby gem for working with [Graylog](https://www.graylog.org/) via the [Graylog R
 Structure of gem looks like Graylog REST Api or navigation menu in UI.
 For example, you can find *Inputs* in *System/Inputs* in the UI and you can find *Inputs* in `GraylogAPI.new(...).system.inputs` in the gem.
 
+You can find more examples [here](./examples/)
+
 ### get Input by id
 
     graylogapi = Graylog.new(base_url: 'http://localhost:9000/api', user: 'username', pass: 'password')
@@ -85,6 +87,10 @@ For example, you can find *Inputs* in *System/Inputs* in the UI and you can find
   * all — Get informatino about all input types.
   * by_type(type) — Get information about a single input type.
   * name_to_type(name) — Convert name of type to type.
+* **Users**: User accounts.
+  * tokens(username) — Retrieves the list of access tokens for a user.
+  * create_token(username, name) — Generate a new access token for a user.
+  * delete_token(username, name) — Removes a token for a user.
 
 
 ## Copyright
