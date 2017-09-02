@@ -18,6 +18,10 @@ class GraylogAPI
     # Initializes a new Client object
     #
     # @param options [Hash]
+    #   * :base_url [String] Endpoint of graylog API
+    #   * :user [String] Username
+    #   * :pass [String] Password
+    #   * :token [String] Token
     # @return [GraylogAPI::Client]
     def initialize(options = {})
       @options = options
