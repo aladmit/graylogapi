@@ -42,15 +42,11 @@ describe GraylogAPI::Client, vcr: true do
   end
 
   context 'auth by token' do
+    subject(:api) { GraylogAPI.new(base_url: 'http://localhost:9000/api', token: token) }
+
     let(:token) { graylogapi.users.create_token('admin', 'rest')['token'] }
 
-    after do
-      graylogapi.users.delete_token('admin', token)
-    end
-
-    subject(:api) do
-      GraylogAPI.new(base_url: 'http://localhost:9000/api', token: token)
-    end
+    after { graylogapi.users.delete_token('admin', token) }
 
     it 'shoud authorize' do
       expect(api.dashboards.all.code).to eq 200
