@@ -40,4 +40,16 @@ describe GraylogAPI::Client, vcr: true do
       expect(request.class).to eq GraylogAPI::Client::Response
     end
   end
+
+  context 'auth by token' do
+    subject(:api) { GraylogAPI.new(base_url: 'http://localhost:9000/api', token: token) }
+
+    let(:token) { graylogapi.users.create_token('admin', 'rest')['token'] }
+
+    after { graylogapi.users.delete_token('admin', token) }
+
+    it 'shoud authorize' do
+      expect(api.dashboards.all.code).to eq 200
+    end
+  end
 end
