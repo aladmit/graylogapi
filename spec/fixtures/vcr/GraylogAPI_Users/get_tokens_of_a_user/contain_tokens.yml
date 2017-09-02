@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:9000/api/users/admin/tokens
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW46YWRtaW4=
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Graylog-Node-Id:
+      - fba6fec6-ff45-4d97-a364-77fdd10e6d94
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 01 Sep 2017 23:14:38 GMT
+      Content-Length:
+      - '490'
+    body:
+      encoding: UTF-8
+      string: '{"tokens":[{"name":"test","token":"ec9gu0h9hk0hlk8m4vi6f2al5jup95nc65nj7bf2sj2qr1knmj","last_access":"1970-01-01T00:00:00.000Z"},{"name":"test","token":"1hf9u2br6os9joftjrn490cb3ul58svsr6gik106fhgdfu91v6sc","last_access":"1970-01-01T00:00:00.000Z"},{"name":"test","token":"126v5gap2va4747dsu9mmlmgknidc33kph9tr2s46hn88j1rsibs","last_access":"1970-01-01T00:00:00.000Z"},{"name":"test","token":"13gqt158no57aei36fmohrvidtq7msojgqqnso67egmm7egvajqn","last_access":"1970-01-01T00:00:00.000Z"}]}'
+    http_version: 
+  recorded_at: Fri, 01 Sep 2017 23:14:39 GMT
+recorded_with: VCR 3.0.3

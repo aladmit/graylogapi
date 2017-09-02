@@ -10,7 +10,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ### Added
 
 - Get info about input types
-- Use name of type when create an input
+- Use name of type then create an input
+- Manage tokens of users
 - Get default index set.
 
 ### Changed
