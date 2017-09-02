@@ -18,7 +18,7 @@ describe GraylogAPI::Users, vcr: true do
   context 'create token for a user' do
     subject(:response) do
       res = graylogapi.users.create_token('admin', 'test')
-      graylogapi.users.delete_token('admin', 'test')
+      graylogapi.users.delete_token('admin', res['token'])
       res
     end
 

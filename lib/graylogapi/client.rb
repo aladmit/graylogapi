@@ -33,7 +33,11 @@ class GraylogAPI
     # @return [GraylogAPI::Client::Response]
     def request(method, path, params = {})
       request = make_request(method, path, params)
-      request.basic_auth(options[:user], options[:pass])
+      if options[:token].nil?
+        request.basic_auth(options[:user], options[:pass])
+      else
+        request.basic_auth(options[:token], 'token')
+      end
       request.add_field('Content-Type', 'application/json')
       response = @http.request(request)
 
