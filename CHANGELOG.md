@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - Manage tokens of users
 - Get default index set
 - Authentication with token
+- Options for http read and http open timeouts
 
 ### Changed
 
