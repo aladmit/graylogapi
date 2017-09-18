@@ -5,7 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## Unreleased
 
-## [1.2.0]
+## Released
+
+## [1.2.0] - 2017-09-18
 
 ### Added
 
@@ -20,8 +22,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ### Changed
 
 - Rename Client.json_request to Client.request
-
-## Released
 
 ## [1.1.0] - 2017-08-14
 
