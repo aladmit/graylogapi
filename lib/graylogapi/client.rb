@@ -27,6 +27,7 @@ class GraylogAPI
     # @return [GraylogAPI::Client]
     def initialize(options = {})
       @options = options
+      @options[:base_url] = options[:base_url].chomp('/')
       @http = http_client(URI.parse(options[:base_url]), options)
     end
 

@@ -7,6 +7,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## Released
 
+## [1.2.1] - 2017-21-17
+
+### Fixed
+
+- `options[:base_url]` can be with slash at the end
+
 ## [1.2.0] - 2017-09-18
 
 ### Added
