@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:9000/api/system/cluster/node
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic YWRtaW46YWRtaW4=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Graylog-Node-Id:
+      - 7c95dbbc-d332-4f7a-88a7-6590ffb58089
+      X-Runtime-Microseconds:
+      - '1597'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 09 Oct 2017 16:57:44 GMT
+      Content-Length:
+      - '277'
+    body:
+      encoding: UTF-8
+      string: '{"cluster_id":"79ea11b8-6a8d-4783-94a7-4743342c0bb9","node_id":"7c95dbbc-d332-4f7a-88a7-6590ffb58089","type":"server","transport_address":"http://172.18.0.4:9000/api/","last_seen":"2017-10-09T16:57:44.000Z","short_node_id":"7c95dbbc","hostname":"41d0db57c8d9","is_master":true}'
+    http_version: 
+  recorded_at: Mon, 09 Oct 2017 16:57:44 GMT
+- request:
+    method: get
+    uri: http://localhost:9000/api/system/cluster/nodes
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic YWRtaW46YWRtaW4=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Graylog-Node-Id:
+      - 7c95dbbc-d332-4f7a-88a7-6590ffb58089
+      X-Runtime-Microseconds:
+      - '1174'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 09 Oct 2017 16:57:44 GMT
+      Content-Length:
+      - '299'
+    body:
+      encoding: UTF-8
+      string: '{"nodes":[{"cluster_id":"79ea11b8-6a8d-4783-94a7-4743342c0bb9","node_id":"7c95dbbc-d332-4f7a-88a7-6590ffb58089","type":"server","transport_address":"http://172.18.0.4:9000/api/","last_seen":"2017-10-09T16:57:44.000Z","short_node_id":"7c95dbbc","hostname":"41d0db57c8d9","is_master":true}],"total":1}'
+    http_version: 
+  recorded_at: Mon, 09 Oct 2017 16:57:44 GMT
+recorded_with: VCR 3.0.3

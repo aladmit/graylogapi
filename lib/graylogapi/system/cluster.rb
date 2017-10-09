@@ -17,6 +17,10 @@ class GraylogAPI
       def node_by_id(id)
         @client.request(:get, "/system/cluster/nodes/#{id}")
       end
+
+      def node_by_hostname(hostname)
+        nodes['nodes'].find { |n| n['hostname'] == hostname }
+      end
     end
   end
 end
