@@ -52,4 +52,20 @@ describe GraylogAPI::System::Cluster, vcr: true do
       expect(response['node_id']).to eq node['node_id']
     end
   end
+
+  context 'node_id_to_hostname' do
+    subject(:response) do
+      graylogapi.system.cluster.node_by_hostname(node['hostname'])
+    end
+
+    let(:node) { graylogapi.system.cluster.node }
+
+    it 'has eq hostname' do
+      expect(response['hostname']).to eq node['hostname']
+    end
+
+    it 'has eq node_id' do
+      expect(response['node_id']).to eq node['node_id']
+    end
+  end
 end
