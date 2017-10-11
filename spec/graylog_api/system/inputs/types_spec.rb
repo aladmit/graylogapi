@@ -29,7 +29,7 @@ describe GraylogAPI::System::Inputs::Types, vcr: true do
     end
   end
 
-  context 'get by inputType' do
+  context 'get input by type' do
     subject(:response) do
       graylogapi.system.inputs.types.by_type(type)
     end
@@ -47,6 +47,19 @@ describe GraylogAPI::System::Inputs::Types, vcr: true do
 
     it 'contain name' do
       expect(response['name']).to eq name
+    end
+  end
+
+  context 'converge type_id to type_name' do
+    subject(:response) do
+      graylogapi.system.inputs.types.type_to_name(type)
+    end
+
+    let(:type) { 'org.graylog2.inputs.syslog.udp.SyslogUDPInput' }
+    let(:name) { 'Syslog UDP' }
+
+    it 'return type name' do
+      expect(response).to eq name
     end
   end
 end
