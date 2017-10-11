@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## Unreleased
 
+## [1.3.0] - 
+
+### Added
+- Convert node's hostname to node_id
+- Convert input's type_id to type's name
+
 ## Released
 
 ## [1.2.1] - 2017-21-17
