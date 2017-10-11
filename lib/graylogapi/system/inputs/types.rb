@@ -34,6 +34,13 @@ class GraylogAPI
         def name_to_type(name)
           all.body.find { |_, type| type['name'].casecmp(name).zero? }.first
         end
+
+        # converg type_id to type name
+        #
+        # @return [String]
+        def type_to_name(type_id)
+          all.body.find { |_, type| type['type'].casecmp(type_id).zero? }.last['name']
+        end
       end
     end
   end
