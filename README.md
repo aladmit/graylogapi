@@ -6,6 +6,8 @@
 [gem]: https://rubygems.org/gems/graylogapi
 [travis]: https://travis-ci.org/postgred/graylogapi
 
+# I don't care about this repo anymore. I think you shouldn't use this.
+
 Ruby gem for working with [Graylog](https://www.graylog.org/) via the [Graylog REST API](http://docs.graylog.org/en/2.2/pages/configuration/rest_api.html?highlight=API)
 
 ## Installation
